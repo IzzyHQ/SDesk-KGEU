@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project MSBuildVersion="4.0" ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{e49abdad-8802-4453-bf3c-15184e66a488}</ProjectGuid>
+    <OutputType>WinEXE</OutputType>
+    <CopyBuildOutputToOutputDirectory>false</CopyBuildOutputToOutputDirectory>
+    <RootNamespace>SDesk_KGEU</RootNamespace>
+    <AssemblyName>Microsoft.LightSwitch.Server.Host</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <LightSwitchVersion>v4.5</LightSwitchVersion>
+    <LightSwitchProjectVersion>v4.5</LightSwitchProjectVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+    <Name>SDesk_KGEU</Name>
+    <LightSwitchProjectTypeV45>LightSwitch</LightSwitchProjectTypeV45>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
+    <ApplicationClientType>Desktop</ApplicationClientType>
+    <ApplicationServerType>LocalHost</ApplicationServerType>
+    <AuthenticationType>None</AuthenticationType>
+    <ApplicationName>SDesk_KGEU</ApplicationName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
+    <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
+    <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug</OutputPath>
+    <UseDesignTimeFeatures>true</UseDesignTimeFeatures>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release</OutputPath>
+    <UseDesignTimeFeatures>false</UseDesignTimeFeatures>
+  </PropertyGroup>
+  <ItemGroup>
+    <ServiceDefinition Include="ServiceDefinition.csdef">
+      <Visible>False</Visible>
+    </ServiceDefinition>
+    <ServiceConfiguration Include="ServiceConfiguration.cscfg">
+      <Visible>False</Visible>
+    </ServiceConfiguration>
+    <DiagnosticsConfiguration Include="diagnostics.wadcfg">
+      <Visible>False</Visible>
+    </DiagnosticsConfiguration>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <ItemGroup>
+    <_BuildFile Include="$(LightSwitchSDKPath)\Design\vslshost.exe">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>EntryPoint</PublishType>
+    </_BuildFile>
+    <_BuildFile Include="$(LightSwitchSDKPath)\Design\vslshost.exe.config">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>Desktop</PublishType>
+    </_BuildFile>
+    <_BuildFile Include="$(LightSwitchSDKPath)\Design\vslshost.exe.manifest">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>Exclude</PublishType>
+    </_BuildFile>
+    <_BuildFile Include="$(LightSwitchSDKPath)\Server\ClientAccessPolicy.xml">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>Exclude</PublishType>
+    </_BuildFile>
+    <_BuildFile Include="$(LightSwitchSDKPath)\Server\Microsoft.LightSwitch.Design.svc">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>Exclude</PublishType>
+    </_BuildFile>
+    <_BuildFile Include="$(LightSwitchSDKPath)\Server\Microsoft.LightSwitch.SecurityData.svc">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>
+      </PublishType>
+    </_BuildFile>
+    <_BuildFile Include="SDesk-KGEU.Server\web.config">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>
+      </PublishType>
+    </_BuildFile>
+    <_BuildFile Include="SDesk-KGEU.Server\default.aspx">
+      <SubFolder>
+      </SubFolder>
+      <PublishType>
+      </PublishType>
+    </_BuildFile>
+    <_BuildFile Include="diagnostics.wadcfg">
+      <SubFolder>bin</SubFolder>
+      <PublishType>
+      </PublishType>
+    </_BuildFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="SDesk-KGEU.DesktopClient\SDesk-KGEU.DesktopClient.csproj">
+      <Name>SDesk-KGEU.DesktopClient</Name>
+      <Project>{78298f71-fd7a-4262-ba4d-0c07372e328e}</Project>
+      <Private>True</Private>
+      <Type>Client</Type>
+    </ProjectReference>
+    <ProjectReference Include="SDesk-KGEU.Server\SDesk-KGEU.Server.csproj">
+      <Name>SDesk-KGEU.Server</Name>
+      <Project>{50566aa4-6024-44c3-b326-f160d6d34c3e}</Project>
+      <Private>True</Private>
+      <Type>Server</Type>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <LightSwitchExtension Include="Extensions\Microsoft.LightSwitch.Cosmopolitan.lspkg">
+      <ExtensionId>Microsoft.LightSwitch.Cosmopolitan</ExtensionId>
+      <Client>MICROSOFT.LIGHTSWITCH.COSMOPOLITAN.CLIENT</Client>
+    </LightSwitchExtension>
+    <LightSwitchExtension Include="Extensions\Microsoft.LightSwitch.Extensions.lspkg">
+      <ExtensionId>Microsoft.LightSwitch.Extensions</ExtensionId>
+      <Client>MICROSOFT.LIGHTSWITCH.EXTENSIONS.CLIENT;MICROSOFT.LIGHTSWITCH.EXTENSIONS.DESIGN.CLIENT</Client>
+      <Server>MICROSOFT.LIGHTSWITCH.EXTENSIONS.SERVER</Server>
+    </LightSwitchExtension>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.targets" />
+</Project>

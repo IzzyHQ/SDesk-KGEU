@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<OutOfBrowserSettings ShortName="SDesk_KGEU.DesktopClient" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
+  <OutOfBrowserSettings.Blurb>SDesk_KGEU.DesktopClient</OutOfBrowserSettings.Blurb>
+  <OutOfBrowserSettings.WindowSettings>
+    <WindowSettings Title="SDesk_KGEU.DesktopClient" WindowStartupLocation="Manual" Top="0" Left="0"/>
+  </OutOfBrowserSettings.WindowSettings>
+  <OutOfBrowserSettings.SecuritySettings>
+    <SecuritySettings ElevatedPermissions="Required" />
+  </OutOfBrowserSettings.SecuritySettings>
+  <OutOfBrowserSettings.Icons />
+</OutOfBrowserSettings>
