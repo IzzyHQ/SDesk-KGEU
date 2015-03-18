@@ -25,7 +25,16 @@
           Value="Service that provides access to security-related data." />
       </EntityContainerGroupProperty.Attributes>
     </EntityContainerGroupProperty>
+    <EntityContainerGroupProperty
+      Name="DeskData"
+      EntityContainer="DeskData" />
   </EntityContainerGroup>
+  <GlobalAttributeGroup>
+    <GlobalAttributeGroup.Attributes>
+      <Proxy
+        Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
+    </GlobalAttributeGroup.Attributes>
+  </GlobalAttributeGroup>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks">

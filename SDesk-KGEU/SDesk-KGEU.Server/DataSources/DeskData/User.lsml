@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceApplication
+  Name="LightSwitchServiceApplication" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <ServiceApplication.Attributes>
+    <Partial />
+  </ServiceApplication.Attributes>
+  <EntityType
+    Name="UserItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="UserId"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="FName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="LName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="PName"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Login"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Email"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="Phone"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="Comment"
+        Association="FK_Comment_User"
+        FromEnd="User"
+        ToEnd="Comment" />
+      <NavigationProperty
+        Name="Order"
+        Association="FK_Order_User"
+        FromEnd="User"
+        ToEnd="Order" />
+      <NavigationProperty
+        Name="Order1"
+        Association="FK_Order_User1"
+        FromEnd="User"
+        ToEnd="Order" />
+      <NavigationProperty
+        Name="Task"
+        Association="FK_Task_User"
+        FromEnd="User"
+        ToEnd="Task" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK_Comment_User">
+    <AssociationEnd
+      Name="User"
+      Multiplicity="One"
+      EntityType="UserItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Comment"
+      Multiplicity="Many"
+      EntityType="CommentItem" />
+  </Association>
+  <Association
+    Name="FK_Order_User">
+    <AssociationEnd
+      Name="User"
+      Multiplicity="One"
+      EntityType="UserItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Order"
+      Multiplicity="Many"
+      EntityType="OrderItem" />
+  </Association>
+  <Association
+    Name="FK_Order_User1">
+    <AssociationEnd
+      Name="User"
+      Multiplicity="One"
+      EntityType="UserItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Order"
+      Multiplicity="Many"
+      EntityType="OrderItem" />
+  </Association>
+  <Association
+    Name="FK_Task_User">
+    <AssociationEnd
+      Name="User"
+      Multiplicity="One"
+      EntityType="UserItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Task"
+      Multiplicity="Many"
+      EntityType="TaskItem" />
+  </Association>
+  <EntityContainer
+    Name="DeskData">
+    <EntityContainer.Attributes>
+      <Partial />
+    </EntityContainer.Attributes>
+    <EntitySet
+      Name="User"
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="UserItem" />
+    <AssociationSet
+      Name="FK_Comment_User"
+      Association="FK_Comment_User">
+      <AssociationSetEnd
+        Name="User"
+        EntitySet="User" />
+      <AssociationSetEnd
+        Name="Comment"
+        EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Order_User"
+      Association="FK_Order_User">
+      <AssociationSetEnd
+        Name="User"
+        EntitySet="User" />
+      <AssociationSetEnd
+        Name="Order"
+        EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Order_User1"
+      Association="FK_Order_User1">
+      <AssociationSetEnd
+        Name="User"
+        EntitySet="User" />
+      <AssociationSetEnd
+        Name="Order"
+        EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet
+      Name="FK_Task_User"
+      Association="FK_Task_User">
+      <AssociationSetEnd
+        Name="User"
+        EntitySet="User" />
+      <AssociationSetEnd
+        Name="Task"
+        EntitySet="Task" />
+    </AssociationSet>
+    <QueryOperation
+      Name="User_Single"
+      ReturnType="UserItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="UserId" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="UserId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="User" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="UserId"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;UserId&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="User_SingleOrDefault"
+      ReturnType="UserItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Возвращает сущность, идентификатор которой задан параметрами, или null, если такая сущность не существует." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="UserId" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="UserId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="User" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="UserId"
+        ParameterType="Microsoft.LightSwitch:Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Значение свойства ключа &quot;UserId&quot; сущности, которое требуется получить." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <DataService
+    Name="DeskDataDataService">
+    <DataService.Attributes>
+      <Partial />
+    </DataService.Attributes>
+    <EntitySetMapping
+      EntitySet="User">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="User" />
+        <SsdlProperty
+          Name="UserId"
+          Nullable="False"
+          Type="int"
+          Property="UserItem/Properties[UserId]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="FName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="UserItem/Properties[FName]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="LName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="UserItem/Properties[LName]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="PName"
+          Nullable="False"
+          Type="nvarchar"
+          Property="UserItem/Properties[PName]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Login"
+          Nullable="True"
+          Type="nvarchar"
+          Property="UserItem/Properties[Login]" />
+        <SsdlProperty
+          MaxLength="50"
+          Name="Email"
+          Nullable="False"
+          Type="nvarchar"
+          Property="UserItem/Properties[Email]" />
+        <SsdlProperty
+          Name="Phone"
+          Nullable="False"
+          Type="int"
+          Property="UserItem/Properties[Phone]" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Comment_User">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Comment_User" />
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Comment_User]/Members[User]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Comment_User]/Members[Comment]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Order_User">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Order_User" />
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_User]/Members[User]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_User]/Members[Order]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Order_User1">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Order_User1" />
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_User1]/Members[User]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_User1]/Members[Order]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="OwnerId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Task_User">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Task_User" />
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Task_User]/Members[User]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Task_User]/Members[Task]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="UserId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+  </DataService>
+</ServiceApplication>

@@ -10,7 +10,7 @@
     <SchemaVersion>
     </SchemaVersion>
     <ProjectTypeGuids>{8BB0C5E8-0616-4F60-8E55-A43933E57E9C};{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{FAE04EC0-301F-11d3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{78298f71-fd7a-4262-ba4d-0c07372e328e}</ProjectGuid>
+    <ProjectGuid>{78298F71-FD7A-4262-BA4D-0C07372E328E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>LightSwitchApplication</RootNamespace>
     <AssemblyName>SDesk_KGEU.DesktopClient</AssemblyName>
@@ -235,6 +235,7 @@
     <None Include="Properties\AppManifest.xml" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />
+    <LightSwitchModel Include="Properties\Proxies.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Screens\" />
@@ -255,4 +256,17 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+      <FlavorProperties GUID="{8BB0C5E8-0616-4F60-8E55-A43933E57E9C}" Configuration="Debug|Any CPU">
+        <SpecializedConfiguration />
+      </FlavorProperties>
+      <FlavorProperties GUID="{8BB0C5E8-0616-4F60-8E55-A43933E57E9C}" Configuration="Release|Any CPU">
+        <SpecializedConfiguration />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

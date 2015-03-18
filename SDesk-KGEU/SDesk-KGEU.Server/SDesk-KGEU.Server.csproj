@@ -200,6 +200,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <LightSwitchModel Include="DataSources\DeskData\Category.lsml" />
+    <LightSwitchModel Include="DataSources\DeskData\Comment.lsml" />
+    <LightSwitchModel Include="DataSources\DeskData\Order.lsml" />
+    <LightSwitchModel Include="DataSources\DeskData\Status.lsml" />
+    <LightSwitchModel Include="DataSources\DeskData\Task.lsml" />
+    <LightSwitchModel Include="DataSources\DeskData\User.lsml" />
+    <LightSwitchModel Include="Properties\DataSources\DeskData.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -216,9 +223,7 @@
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
