@@ -161,6 +161,7 @@
         <SsdlProperty
           Name="CommentId"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
           Property="CommentItem/Properties[CommentId]" />
         <SsdlProperty

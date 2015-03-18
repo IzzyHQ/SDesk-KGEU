@@ -170,6 +170,7 @@
         <SsdlProperty
           Name="CategoryId"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
           Property="CategoryItem/Properties[CategoryId]" />
         <SsdlProperty

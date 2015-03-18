@@ -170,6 +170,7 @@
         <SsdlProperty
           Name="StatusId"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
           Property="StatusItem/Properties[StatusId]" />
         <SsdlProperty

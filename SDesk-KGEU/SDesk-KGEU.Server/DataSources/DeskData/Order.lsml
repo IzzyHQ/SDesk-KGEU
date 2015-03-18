@@ -38,7 +38,7 @@
         <EntityProperty.Attributes>
           <Required />
           <DateTimeConstraint
-            Precision="3"
+            Precision="7"
             PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
@@ -231,6 +231,7 @@
         <SsdlProperty
           Name="IdOrder"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
           Property="OrderItem/Properties[IdOrder]" />
         <SsdlProperty
@@ -242,7 +243,7 @@
         <SsdlProperty
           Name="Date"
           Nullable="False"
-          Type="datetime"
+          Type="datetime2"
           Property="OrderItem/Properties[c_Date]" />
         <SsdlForeignKeyProperty
           Name="CategoryId"
@@ -261,7 +262,7 @@
           PropertyName="UserId" />
         <SsdlForeignKeyProperty
           Name="OwnerId"
-          Nullable="False"
+          Nullable="True"
           Type="int"
           PropertyName="OwnerId" />
       </EntitySetMapping.Attributes>

@@ -131,7 +131,6 @@
     Name="FK_Order_User1">
     <AssociationEnd
       Name="User"
-      Multiplicity="One"
       EntityType="UserItem">
       <AssociationEnd.Attributes>
         <DeleteRule />
@@ -303,6 +302,7 @@
         <SsdlProperty
           Name="UserId"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
           Property="UserItem/Properties[UserId]" />
         <SsdlProperty

@@ -150,6 +150,7 @@
         <SsdlProperty
           Name="TaskId"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
           Property="TaskItem/Properties[TaskId]" />
         <SsdlProperty
