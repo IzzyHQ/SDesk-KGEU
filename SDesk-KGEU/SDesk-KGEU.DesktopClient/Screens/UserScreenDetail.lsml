@@ -27,6 +27,10 @@
               Kind="Collection"
               DataType="CollectionView$OrderItem"
               View="Microsoft.LightSwitch.RichClient:DataGrid">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Заявки" />
+              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
@@ -44,6 +48,24 @@
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+                <ContentItem
+                  Name="StatusItem"
+                  Kind="Details"
+                  DataType="StatusItem"
+                  View="Microsoft.LightSwitch.RichClient:Summary">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Статус" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="OrderItem/Properties[StatusItem]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
                 <ContentItem
                   Name="IdOrder"
                   Kind="Value"
@@ -79,6 +101,24 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="Auto"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HeightSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="Auto"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Name="Date"
@@ -141,24 +181,6 @@
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="StatusItem"
-                  Kind="Details"
-                  DataType="StatusItem"
-                  View="Microsoft.LightSwitch.RichClient:Summary">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Статус заявки" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="OrderItem/Properties[StatusItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
                   Name="UserItem"
@@ -281,7 +303,7 @@
               View="Microsoft.LightSwitch.RichClient:ModalWindow">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="AddNewOrderModalWnd" />
+                  Value="Новая заявка" />
               </ContentItem.Attributes>
               <ContentItem
                 Name="Order_SelectedItem_Description"
@@ -303,6 +325,48 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Height]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="50"
+                        ResultType=":Double" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[WidthSizingMode]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="Characters"
+                        ResultType=":String" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HeightSizingMode]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="Lines"
+                        ResultType=":String" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:TextBox/Properties[Lines]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="7"
+                        ResultType=":Int32" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:TextBox/Properties[Characters]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="30"
+                        ResultType=":Int32" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
                 Name="Order_SelectedItem_UserItem"
@@ -438,6 +502,10 @@
               Name="AddCommentWnd"
               Kind="Group"
               View="Microsoft.LightSwitch.RichClient:ModalWindow">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Добавление комментария" />
+              </ContentItem.Attributes>
               <ContentItem
                 Name="Comment_SelectedItem_Description"
                 Kind="Value"
@@ -592,6 +660,10 @@
               Kind="Collection"
               DataType="CollectionView$CommentItem"
               View="Microsoft.LightSwitch.RichClient:List">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Комментарии" />
+              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>

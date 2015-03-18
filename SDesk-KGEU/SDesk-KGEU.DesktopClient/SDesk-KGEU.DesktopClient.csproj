@@ -20,7 +20,7 @@
     <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
     <SilverlightApplication>true</SilverlightApplication>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>ru</SupportedCultures>
+    <SupportedCultures>en-US</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>SDesk_KGEU.DesktopClient.xap</XapFilename>
@@ -244,6 +244,7 @@
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\UserScreenDetail.lsml" />
     <LightSwitchModel Include="Screens\SpecialistScreenDetail.lsml" />
+    <LightSwitchModel Include="Screens\DispatcherScreenDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\approved-151676_640.png" />
