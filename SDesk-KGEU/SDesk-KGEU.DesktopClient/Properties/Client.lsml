@@ -39,6 +39,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowUserScreenDetail"
       Target="!module/Methods[ShowUserScreenDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowSpecialistScreenDetail"
+      Target="!module/Methods[ShowSpecialistScreenDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -51,6 +54,9 @@
       <ApplicationNavigationLink
         Name="UserScreenDetail"
         Command="!module/Commands[ScreenCommandShowUserScreenDetail]" />
+      <ApplicationNavigationLink
+        Name="SpecialistScreenDetail"
+        Command="!module/Commands[ScreenCommandShowSpecialistScreenDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

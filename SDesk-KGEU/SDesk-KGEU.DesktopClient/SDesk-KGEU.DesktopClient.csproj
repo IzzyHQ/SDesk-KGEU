@@ -243,6 +243,7 @@
     <ClientResource Include="Properties\Config.xml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\UserScreenDetail.lsml" />
+    <LightSwitchModel Include="Screens\SpecialistScreenDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\approved-151676_640.png" />
