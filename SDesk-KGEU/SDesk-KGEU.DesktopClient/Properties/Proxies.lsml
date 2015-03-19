@@ -61,12 +61,6 @@
   <Association>
     <Association.Attributes>
       <Proxy
-        Target="ServiceInterface:FK_Order_Status" />
-    </Association.Attributes>
-  </Association>
-  <Association>
-    <Association.Attributes>
-      <Proxy
         Target="ServiceInterface:FK_Order_User" />
     </Association.Attributes>
   </Association>
@@ -94,4 +88,16 @@
         Target="ServiceInterface:DeskData" />
     </EntityContainer.Attributes>
   </EntityContainer>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Task_Status" />
+    </Association.Attributes>
+  </Association>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Order_Status" />
+    </Association.Attributes>
+  </Association>
 </Application>

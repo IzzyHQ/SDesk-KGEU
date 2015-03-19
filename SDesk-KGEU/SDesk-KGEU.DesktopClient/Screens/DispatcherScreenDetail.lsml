@@ -45,44 +45,6 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="StatusItem"
-                  Kind="Details"
-                  DataType="StatusItem"
-                  View="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="OrderItem/Properties[StatusItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="StatusItemTemplate"
-                    Kind="Details"
-                    DataType="StatusItem"
-                    View="Microsoft.LightSwitch.RichClient:RowsLayout">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      Name="Name"
-                      Kind="Value"
-                      DataType=":String">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <MemberExpression
-                              Member="StatusItem/Properties[Name]" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
                   Name="IdOrder"
                   Kind="Value"
                   DataType=":Int32"

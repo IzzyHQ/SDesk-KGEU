@@ -102,20 +102,6 @@
                   </ContentItem.DataSource>
                 </ContentItem>
                 <ContentItem
-                  Name="StatusItem"
-                  Kind="Details"
-                  DataType="StatusItem"
-                  View="Microsoft.LightSwitch.RichClient:Summary">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="OrderItem/Properties[StatusItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="UserItem"
                   Kind="Details"
                   DataType="UserItem"

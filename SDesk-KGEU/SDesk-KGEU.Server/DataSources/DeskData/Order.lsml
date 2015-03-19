@@ -54,11 +54,6 @@
         FromEnd="Order"
         ToEnd="Category" />
       <NavigationProperty
-        Name="StatusItem"
-        Association="FK_Order_Status"
-        FromEnd="Order"
-        ToEnd="Status" />
-      <NavigationProperty
         Name="UserItem"
         Association="FK_Order_User"
         FromEnd="Order"
@@ -73,6 +68,11 @@
         Association="FK_Task_Order"
         FromEnd="Order"
         ToEnd="Task" />
+      <NavigationProperty
+        Name="StatusItem"
+        Association="FK_Order_Status"
+        FromEnd="Order"
+        ToEnd="Status" />
     </EntityType.Properties>
   </EntityType>
   <Association
