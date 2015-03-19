@@ -182,6 +182,29 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>
+                <ContentItem
+                  Name="StatusItem"
+                  Kind="Details"
+                  DataType="StatusItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="OrderItem/Properties[StatusItem]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    Name="StatusItem1"
+                    Kind="Details"
+                    DataType="StatusItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
@@ -382,6 +405,33 @@
                 </ContentItem>
               </ContentItem>
               <ContentItem
+                Name="Order_SelectedItem_StatusItem"
+                Kind="Details"
+                DataType="StatusItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="UserScreenDetail/Properties[Order]" />
+                      <MemberExpression
+                        Member="SelectedItem" />
+                      <MemberExpression
+                        Member="StatusItem" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  Name="StatusItem2"
+                  Kind="Details"
+                  DataType="StatusItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
                 Name="Order_SelectedItem_CategoryItem"
                 Kind="Details"
                 DataType="CategoryItem">
@@ -425,6 +475,18 @@
                       <ChainExpression>
                         <CallExpression
                           Target="UserScreenDetail/Methods[SaveNewOrder]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="CancelNewOrder"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="UserScreenDetail/Methods[CancelNewOrder]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -550,6 +612,18 @@
                       <ChainExpression>
                         <CallExpression
                           Target="UserScreenDetail/Methods[SaveCommentAction]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="CancelComment"
+                  Kind="Command">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="UserScreenDetail/Methods[CancelComment]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
@@ -863,6 +937,14 @@
         Name="SaveCommentAction" />
       <ScreenMethod
         Name="DeleteCommentAction" />
+      <ScreenMethod
+        Name="Отмена" />
+      <ScreenMethod
+        Name="Cancel" />
+      <ScreenMethod
+        Name="CancelComment" />
+      <ScreenMethod
+        Name="CancelNewOrder" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

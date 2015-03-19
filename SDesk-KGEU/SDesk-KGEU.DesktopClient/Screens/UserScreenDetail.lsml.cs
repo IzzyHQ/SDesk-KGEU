@@ -62,5 +62,23 @@ namespace LightSwitchApplication
             Comment.SelectedItem.Delete();
             DataWorkspace.DeskData.SaveChanges();
         }
+
+        partial void CancelComment_Execute()
+        {
+            DataWorkspace.DeskData.Details.DiscardChanges();
+            this.CloseModalWindow("AddCommentWnd");
+
+        }
+
+        partial void CancelNewOrder_Execute()
+        {
+            DataWorkspace.DeskData.Details.DiscardChanges();
+            this.CloseModalWindow("AddNewOrderModalWnd");
+
+        }
+
+
+   
+ 
     }
 }
