@@ -68,11 +68,6 @@
         Association="FK_Task_Order"
         FromEnd="Order"
         ToEnd="Task" />
-      <NavigationProperty
-        Name="StatusItem"
-        Association="FK_Order_Status"
-        FromEnd="Order"
-        ToEnd="Status" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -250,11 +245,6 @@
           Nullable="False"
           Type="int"
           PropertyName="CategoryId" />
-        <SsdlForeignKeyProperty
-          Name="StatusId"
-          Nullable="False"
-          Type="int"
-          PropertyName="StatusId" />
         <SsdlForeignKeyProperty
           Name="UserId"
           Nullable="False"
