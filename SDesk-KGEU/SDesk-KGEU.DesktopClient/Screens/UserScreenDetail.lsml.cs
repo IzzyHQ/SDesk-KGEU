@@ -11,8 +11,11 @@ namespace LightSwitchApplication
 {
     public partial class UserScreenDetail
     {
+
+       
         partial void AddNewOrder_Execute()
         {
+          
             // Добавьте сюда свой код.
             Order.AddNew();
             this.OpenModalWindow("AddNewOrderModalWnd");
@@ -61,6 +64,7 @@ namespace LightSwitchApplication
             // Добавьте сюда свой код.
             Comment.SelectedItem.Delete();
             DataWorkspace.DeskData.SaveChanges();
+
         }
 
         partial void CancelComment_Execute()
