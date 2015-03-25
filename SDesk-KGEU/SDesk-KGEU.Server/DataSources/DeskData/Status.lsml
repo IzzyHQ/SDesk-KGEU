@@ -37,11 +37,6 @@
         Association="FK_Task_Status"
         FromEnd="Status"
         ToEnd="Task" />
-      <NavigationProperty
-        Name="Order"
-        Association="FK_Order_Status"
-        FromEnd="Status"
-        ToEnd="Order" />
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -145,16 +140,6 @@
         Name="Task"
         EntitySet="Task" />
     </AssociationSet>
-    <AssociationSet
-      Name="FK_Order_Status"
-      Association="FK_Order_Status">
-      <AssociationSetEnd
-        Name="Status"
-        EntitySet="Status" />
-      <AssociationSetEnd
-        Name="Order"
-        EntitySet="Order" />
-    </AssociationSet>
   </EntityContainer>
   <Association
     Name="FK_Task_Status">
@@ -170,21 +155,6 @@
       Name="Task"
       Multiplicity="Many"
       EntityType="TaskItem" />
-  </Association>
-  <Association
-    Name="FK_Order_Status">
-    <AssociationEnd
-      Name="Status"
-      Multiplicity="One"
-      EntityType="StatusItem">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Order"
-      Multiplicity="Many"
-      EntityType="OrderItem" />
   </Association>
   <DataService
     Name="DeskDataDataService">
@@ -211,27 +181,6 @@
           Property="StatusItem/Properties[Name]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="FK_Order_Status">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="FK_Order_Status" />
-        <SsdlAssociationSetEnd
-          End="DeskData/Members[FK_Order_Status]/Members[Status]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="StatusId" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="DeskData/Members[FK_Order_Status]/Members[Order]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="StatusId" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
     <AssociationSetMapping
       AssociationSet="FK_Task_Status">
       <AssociationSetMapping.Attributes>
