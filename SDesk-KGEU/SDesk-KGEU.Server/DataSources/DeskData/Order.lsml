@@ -68,6 +68,16 @@
         Association="FK_Task_Order"
         FromEnd="Order"
         ToEnd="Task" />
+      <EntityProperty
+        Name="Status"
+        IsReadOnly="True"
+        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association

@@ -242,6 +242,7 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <None Include="Properties\AppManifest.xml" />
+    <LightSwitchModel Include="Properties\DeskData\Order.lsml" />
     <None Include="Properties\OutOfBrowserSettings.xml" />
     <ClientResource Include="Properties\Config.xml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
