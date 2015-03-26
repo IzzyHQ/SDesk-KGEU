@@ -284,29 +284,6 @@
                     </ContentItem>
                   </ContentItem>
                 </ContentItem>
-                <ContentItem
-                  Name="StatusItem"
-                  Kind="Details"
-                  DataType="StatusItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="OrderItem/Properties[StatusItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="StatusItem1"
-                    Kind="Details"
-                    DataType="StatusItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
@@ -499,33 +476,6 @@
                   Name="UserItem1"
                   Kind="Details"
                   DataType="UserItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem>
-              <ContentItem
-                Name="Order_SelectedItem_StatusItem"
-                Kind="Details"
-                DataType="StatusItem">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="UserScreenDetail/Properties[Order]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="StatusItem" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="StatusItem2"
-                  Kind="Details"
-                  DataType="StatusItem">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression />
