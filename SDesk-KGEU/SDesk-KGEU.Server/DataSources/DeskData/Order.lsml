@@ -71,10 +71,9 @@
       <EntityProperty
         Name="Status"
         IsReadOnly="True"
-        PropertyType="Microsoft.LightSwitch.Extensions:Percent">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <Computed />
-          <NotSearchable />
           <NotSortable />
         </EntityProperty.Attributes>
       </EntityProperty>

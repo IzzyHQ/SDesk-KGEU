@@ -52,7 +52,8 @@
                 <ContentItem
                   Name="Status"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Percent">
+                  DataType=":String"
+                  View="Microsoft.LightSwitch.RichClient:Label">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -264,6 +265,26 @@
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:CollectionControlSupportingExport/Properties[HideExportButton]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="True"
+                        ResultType=":Boolean" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="False"
+                        ResultType=":Boolean" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem
@@ -271,37 +292,42 @@
               Kind="Group"
               View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
               <ContentItem
-                Name="Order_SelectedItem_Description1"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Текст заявки " />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="UserScreenDetail/Properties[Order]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Description" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                Name="Group1"
+                Kind="Group"
+                View="Microsoft.LightSwitch.RichClient:TabsLayout">
+                <ContentItem
+                  Name="Order_SelectedItem_Description1"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Текст заявки " />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <ConstantExpression
-                          Value="Top"
-                          ResultType=":String" />
+                        <MemberExpression
+                          Member="UserScreenDetail/Properties[Order]" />
+                        <MemberExpression
+                          Member="SelectedItem" />
+                        <MemberExpression
+                          Member="Description" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Top"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
               </ContentItem>
               <ContentItem
                 Name="Task"
@@ -410,37 +436,42 @@
                 </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
-                Name="Task_SelectedItem_Description"
-                Kind="Value"
-                DataType=":String">
-                <ContentItem.Attributes>
-                  <DisplayName
-                    Value="Описание задачи" />
-                </ContentItem.Attributes>
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="UserScreenDetail/Properties[Task]" />
-                      <MemberExpression
-                        Member="SelectedItem" />
-                      <MemberExpression
-                        Member="Description" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                Name="Group2"
+                Kind="Group"
+                View="Microsoft.LightSwitch.RichClient:TabsLayout">
+                <ContentItem
+                  Name="Task_SelectedItem_Description"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Описание задачи" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
-                        <ConstantExpression
-                          Value="Top"
-                          ResultType=":String" />
+                        <MemberExpression
+                          Member="UserScreenDetail/Properties[Task]" />
+                        <MemberExpression
+                          Member="SelectedItem" />
+                        <MemberExpression
+                          Member="Description" />
                       </ChainExpression>
                     </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            Value="Top"
+                            ResultType=":String" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
               </ContentItem>
             </ContentItem>
             <ContentItem.PropertySources>

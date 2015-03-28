@@ -194,6 +194,7 @@
     <Compile Include="DataSources\DeskData\OrderItem.lsml.cs">
       <DependentUpon>Order.lsml</DependentUpon>
     </Compile>
+    <Compile Include="DataSources\DeskData\_DeskDataService.lsml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
