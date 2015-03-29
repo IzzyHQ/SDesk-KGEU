@@ -379,7 +379,7 @@
           End="DeskData/Members[FK_Order_User]/Members[Order]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="UserId" />
+              Name="OwnerId" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
@@ -400,7 +400,7 @@
           End="DeskData/Members[FK_Order_User1]/Members[Order]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
-              Name="OwnerId" />
+              Name="DUserId" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

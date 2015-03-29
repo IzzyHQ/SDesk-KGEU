@@ -720,7 +720,7 @@
                     <MemberExpression
                       Member="SelectedItem" />
                     <MemberExpression
-                      Member="UserItem" />
+                      Member="UserOwner" />
                   </ChainExpression>
                 </ScreenExpressionTree>
               </ContentItem.DataSource>

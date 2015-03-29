@@ -54,12 +54,12 @@
         FromEnd="Order"
         ToEnd="Category" />
       <NavigationProperty
-        Name="UserItem"
+        Name="UserOwner"
         Association="FK_Order_User"
         FromEnd="Order"
         ToEnd="User" />
       <NavigationProperty
-        Name="UserItem1"
+        Name="DUser"
         Association="FK_Order_User1"
         FromEnd="Order"
         ToEnd="User" />
@@ -255,15 +255,15 @@
           Type="int"
           PropertyName="CategoryId" />
         <SsdlForeignKeyProperty
-          Name="UserId"
+          Name="OwnerId"
           Nullable="False"
           Type="int"
-          PropertyName="UserId" />
+          PropertyName="OwnerId" />
         <SsdlForeignKeyProperty
-          Name="OwnerId"
+          Name="DUserId"
           Nullable="True"
           Type="int"
-          PropertyName="OwnerId" />
+          PropertyName="DUserId" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping
