@@ -17,22 +17,27 @@ namespace LightSwitchApplication
                 result = "Новая";
                 return;
             }
-            //var closedCnt = this.Task.Count(t => t.StatusItem.StatusId == 3);
-            if (this.Task.Any(p=>p.StatusItem.StatusId==2))
+            if (this.Task.Any(p => p.StatusItem == null))
+            {
+                result = "Новая";
+            }
+            else if (this.Task.Any(p => p.StatusItem.StatusId == 2 ))
             {
                 result = "В работе" ;
                 return;
             }
-            else if (this.Task.Any(p=>p.StatusItem.StatusId==5))
+            else if (this.Task.Any(p => p.StatusItem.StatusId == 5))
             {
-               result = "Требует уточнения" ;
-                return; 
+                result = "Требует уточнения";
+                return;
             }
             else if (this.Task.All(p=>p.StatusItem.StatusId==3))
             {
-               result = "Выполнена" ;
+                result = "Выполнена";
+
                 return;   
             }
+          
             
             // Присвоение результату значения нужного поля
         }
