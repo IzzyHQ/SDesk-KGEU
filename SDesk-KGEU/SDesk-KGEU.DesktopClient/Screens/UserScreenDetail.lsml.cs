@@ -16,7 +16,7 @@ namespace LightSwitchApplication
         partial void AddNewOrder_Execute()
         {
           
-            // Добавьте сюда свой код.
+            
             Order.AddNew();
             this.OpenModalWindow("AddNewOrderModalWnd");
 

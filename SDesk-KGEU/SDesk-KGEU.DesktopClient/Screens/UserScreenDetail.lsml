@@ -17,8 +17,7 @@
         View="Microsoft.LightSwitch.RichClient:Screen">
         <ContentItem
           Name="ScreenLayout"
-          Kind="Group"
-          View="Microsoft.LightSwitch.RichClient:RowsLayout">
+          Kind="Group">
           <ContentItem
             Name="ListColumn"
             Kind="Group">
@@ -84,8 +83,8 @@
                 <ContentItem
                   Name="Date"
                   Kind="Value"
-                  DataType=":DateTime"
-                  View="Microsoft.LightSwitch.RichClient:Label">
+                  DataType=":Date"
+                  View="Microsoft.LightSwitch.RichClient:DateViewer">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Дата создания" />
@@ -245,16 +244,6 @@
                 </ContentItem>
               </ContentItem.CommandItems>
               <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Collapsed"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
                 <ControlPropertySource
                   Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
                   <ScreenExpressionTree>
@@ -795,6 +784,18 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
               </ContentItem>
+              <ContentItem
+                Name="OpenFileDialog"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="UserScreenDetail/Methods[OpenFileDialog]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
             </ContentItem.CommandItems>
             <ContentItem.PropertySources>
               <ControlPropertySource
@@ -903,6 +904,10 @@
         Name="CancelComment" />
       <ScreenMethod
         Name="CancelNewOrder" />
+      <ScreenMethod
+        Name="AddFile" />
+      <ScreenMethod
+        Name="OpenFileDialog" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

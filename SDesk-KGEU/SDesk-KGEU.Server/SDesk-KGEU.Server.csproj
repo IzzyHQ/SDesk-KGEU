@@ -15,8 +15,8 @@
     <AssemblyName>Application.Server</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <LightSwitchVersion>v4.5</LightSwitchVersion>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <SupportedCultures>en-US</SupportedCultures>
+    <DefaultLanguage>ru</DefaultLanguage>
+    <SupportedCultures>ru</SupportedCultures>
     <FileAlignment>512</FileAlignment>
     <IgnoreDeployManagedRuntimeVersion>True</IgnoreDeployManagedRuntimeVersion>
     <UseDeclareParametersXMLInMsDeploy>False</UseDeclareParametersXMLInMsDeploy>
@@ -211,6 +211,7 @@
     <LightSwitchModel Include="DataSources\DeskData\Task.lsml" />
     <LightSwitchModel Include="DataSources\DeskData\User.lsml" />
     <LightSwitchModel Include="Properties\DataSources\DeskData.lsml" />
+    <LightSwitchModel Include="DataSources\DeskData\File.lsml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

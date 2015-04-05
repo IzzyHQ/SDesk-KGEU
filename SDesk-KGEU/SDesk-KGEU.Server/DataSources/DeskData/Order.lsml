@@ -34,7 +34,7 @@
       </EntityProperty>
       <EntityProperty
         Name="c_Date"
-        PropertyType=":DateTime">
+        PropertyType=":Date">
         <EntityProperty.Attributes>
           <Required />
           <DateTimeConstraint
@@ -74,6 +74,31 @@
         PropertyType=":String">
         <EntityProperty.Attributes>
           <Computed />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Name="FileItem"
+        Association="FK_Order_File"
+        FromEnd="Order"
+        ToEnd="File" />
+      <EntityProperty
+        Name="FullName"
+        IsReadOnly="True"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
+          <NotSortable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="FullName1"
+        IsReadOnly="True"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <Computed />
+          <NotSearchable />
           <NotSortable />
         </EntityProperty.Attributes>
       </EntityProperty>
@@ -254,6 +279,11 @@
           Nullable="False"
           Type="int"
           PropertyName="CategoryId" />
+        <SsdlForeignKeyProperty
+          Name="FileId"
+          Nullable="True"
+          Type="int"
+          PropertyName="FileId" />
         <SsdlForeignKeyProperty
           Name="OwnerId"
           Nullable="False"

@@ -17,6 +17,20 @@
             Target="LightSwitchServiceApplication:OrderItem/Properties[Status]" />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <EntityProperty>
+        <EntityProperty.Attributes>
+          <Computed />
+          <Proxy
+            Target="LightSwitchServiceApplication:OrderItem/Properties[FullName]" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty>
+        <EntityProperty.Attributes>
+          <Computed />
+          <Proxy
+            Target="LightSwitchServiceApplication:OrderItem/Properties[FullName1]" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
 </Application>

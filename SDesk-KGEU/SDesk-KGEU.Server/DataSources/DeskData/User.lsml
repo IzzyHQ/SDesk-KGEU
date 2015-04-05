@@ -95,6 +95,14 @@
         Association="FK_Task_User"
         FromEnd="User"
         ToEnd="Task" />
+      <EntityProperty
+        Name="Image"
+        PropertyType="Microsoft.LightSwitch.Extensions:Image?">
+        <EntityProperty.Attributes>
+          <MaxLength />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -340,6 +348,11 @@
           Nullable="False"
           Type="int"
           Property="UserItem/Properties[Phone]" />
+        <SsdlProperty
+          Name="Image"
+          Nullable="True"
+          Type="varbinary(max)"
+          Property="UserItem/Properties[Image]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <AssociationSetMapping

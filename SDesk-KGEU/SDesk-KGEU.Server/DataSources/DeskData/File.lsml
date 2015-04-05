@@ -5,7 +5,7 @@
     <Partial />
   </ServiceApplication.Attributes>
   <EntityType
-    Name="TaskItem">
+    Name="FileItem">
     <EntityType.Methods>
       <EntityMethod
         Name="Delete">
@@ -16,7 +16,7 @@
     </EntityType.Methods>
     <EntityType.Properties>
       <KeyProperty
-        Name="TaskId"
+        Name="FileId"
         PropertyType=":Int32">
         <KeyProperty.Attributes>
           <Required />
@@ -24,45 +24,58 @@
         </KeyProperty.Attributes>
       </KeyProperty>
       <EntityProperty
-        Name="Description"
-        PropertyType=":String">
+        Name="Image"
+        PropertyType="Microsoft.LightSwitch.Extensions:Image?">
         <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="1024" />
+          <MaxLength />
+          <NotSearchable />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
-        Name="OrderItem"
-        Association="FK_Task_Order"
-        FromEnd="Task"
+        Name="Order"
+        Association="FK_Order_File"
+        FromEnd="File"
         ToEnd="Order" />
-      <NavigationProperty
-        Name="UserItem"
-        Association="FK_Task_User"
-        FromEnd="Task"
-        ToEnd="User" />
-      <NavigationProperty
-        Name="StatusItem"
-        Association="FK_Task_Status"
-        FromEnd="Task"
-        ToEnd="Status" />
     </EntityType.Properties>
   </EntityType>
+  <Association
+    Name="FK_Order_File">
+    <AssociationEnd
+      Name="File"
+      EntityType="FileItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      Name="Order"
+      Multiplicity="Many"
+      EntityType="OrderItem" />
+  </Association>
   <EntityContainer
     Name="DeskData">
     <EntityContainer.Attributes>
       <Partial />
     </EntityContainer.Attributes>
     <EntitySet
-      Name="Task"
+      Name="File"
       CanDelete="True"
       CanInsert="True"
       CanUpdate="True"
-      EntityType="TaskItem" />
+      EntityType="FileItem" />
+    <AssociationSet
+      Name="FK_Order_File"
+      Association="FK_Order_File">
+      <AssociationSetEnd
+        Name="File"
+        EntitySet="File" />
+      <AssociationSetEnd
+        Name="Order"
+        EntitySet="Order" />
+    </AssociationSet>
     <QueryOperation
-      Name="Task_Single"
-      ReturnType="TaskItem">
+      Name="File_Single"
+      ReturnType="FileItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -75,12 +88,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="TaskId" />
+                  Member="FileId" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="TaskId" />
+                Parameter="FileId" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -88,21 +101,21 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Task" />
+            Member="File" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="TaskId"
+        Name="FileId"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="Значение свойства ключа &quot;TaskId&quot; сущности, которое требуется получить." />
+            Value="Значение свойства ключа &quot;FileId&quot; сущности, которое требуется получить." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="Task_SingleOrDefault"
-      ReturnType="TaskItem">
+      Name="File_SingleOrDefault"
+      ReturnType="FileItem">
       <QueryOperation.Attributes>
         <Generated />
         <Description
@@ -115,12 +128,12 @@
             <BinaryExpression.Left>
               <ChainExpression>
                 <MemberExpression
-                  Member="TaskId" />
+                  Member="FileId" />
               </ChainExpression>
             </BinaryExpression.Left>
             <BinaryExpression.Right>
               <ParameterExpression
-                Parameter="TaskId" />
+                Parameter="FileId" />
             </BinaryExpression.Right>
           </BinaryExpression>
         </QueryFilterExpressionTree>
@@ -128,15 +141,15 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Task" />
+            Member="File" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
-        Name="TaskId"
+        Name="FileId"
         ParameterType="Microsoft.LightSwitch:Int32?">
         <QueryOperationParameter.Attributes>
           <Description
-            Value="Значение свойства ключа &quot;TaskId&quot; сущности, которое требуется получить." />
+            Value="Значение свойства ключа &quot;FileId&quot; сущности, которое требуется получить." />
         </QueryOperationParameter.Attributes>
       </QueryOperationParameter>
     </QueryOperation>
@@ -147,39 +160,43 @@
       <Partial />
     </DataService.Attributes>
     <EntitySetMapping
-      EntitySet="Task">
+      EntitySet="File">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
           Schema="dbo"
-          Table="Task" />
+          Table="File" />
         <SsdlProperty
-          Name="TaskId"
+          Name="FileId"
           Nullable="False"
-          StoreGeneratedPattern="Identity"
           Type="int"
-          Property="TaskItem/Properties[TaskId]" />
+          Property="FileItem/Properties[FileId]" />
         <SsdlProperty
-          MaxLength="1024"
-          Name="Description"
-          Nullable="False"
-          Type="nvarchar"
-          Property="TaskItem/Properties[Description]" />
-        <SsdlForeignKeyProperty
-          Name="OrderId"
-          Nullable="False"
-          Type="int"
-          PropertyName="OrderId" />
-        <SsdlForeignKeyProperty
-          Name="StatusId"
-          Nullable="False"
-          Type="int"
-          PropertyName="StatusId" />
-        <SsdlForeignKeyProperty
-          Name="UserId"
-          Nullable="False"
-          Type="int"
-          PropertyName="UserId" />
+          Name="Image"
+          Nullable="True"
+          Type="varbinary(max)"
+          Property="FileItem/Properties[Image]" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Order_File">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_Order_File" />
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_File]/Members[File]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="FileId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_File]/Members[Order]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="FileId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

@@ -11,6 +11,26 @@ namespace LightSwitchApplication
 {
     public partial class DispatcherScreenDetail
     {
-        
+
+        partial void TaskAdd_Execute()
+        {
+            Task.AddNew();
+            this.OpenModalWindow("AddNewTaskModalWnd");
+
+        }
+
+        partial void SaveNewTask_Execute()
+        {
+            DataWorkspace.DeskData.SaveChanges();
+            this.CloseModalWindow("AddNewTaskModalWnd");
+
+        }
+
+        partial void CancelNewTask_Execute()
+        {
+            DataWorkspace.DeskData.Details.DiscardChanges();
+            this.CloseModalWindow("AddNewTaskModalWnd");
+
+        }
     }
 }
