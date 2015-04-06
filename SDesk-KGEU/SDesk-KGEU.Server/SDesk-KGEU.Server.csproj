@@ -212,6 +212,9 @@
     <LightSwitchModel Include="DataSources\DeskData\User.lsml" />
     <LightSwitchModel Include="Properties\DataSources\DeskData.lsml" />
     <LightSwitchModel Include="DataSources\DeskData\File.lsml" />
+    <LightSwitchModel Include="DataSources\DeskData\Query1.lsml">
+      <DependentUpon>Order.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

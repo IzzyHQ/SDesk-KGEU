@@ -81,6 +81,18 @@ namespace LightSwitchApplication
 
         }
 
+        partial void OpenFileDialog_Execute()
+        {
+            
+                Microsoft.LightSwitch.Threading.Dispatchers.Main.BeginInvoke(() =>
+                {
+                    var ofd = new System.Windows.Controls.OpenFileDialog();
+                    ofd.ShowDialog();
+                });
+            
+
+        }
+
 
    
  

@@ -28,6 +28,10 @@
               Kind="Collection"
               DataType="CollectionView$OrderItem"
               View="Microsoft.LightSwitch.RichClient:DataGrid">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Заявки" />
+              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
@@ -49,6 +53,10 @@
                   Name="Status"
                   Kind="Value"
                   DataType=":String">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Статус" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -63,6 +71,10 @@
                   Kind="Value"
                   DataType=":Int32"
                   View="Microsoft.LightSwitch.RichClient:Label">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Номер заявки" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -77,6 +89,10 @@
                   Kind="Value"
                   DataType=":String"
                   View="Microsoft.LightSwitch.RichClient:Label">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Описание" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -90,6 +106,10 @@
                   Name="c_Date"
                   Kind="Value"
                   DataType=":Date">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Дата создания" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -103,6 +123,10 @@
                   Name="CategoryItem"
                   Kind="Details"
                   DataType="CategoryItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Категория" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -237,7 +261,7 @@
                   DataType=":String">
                   <ContentItem.Attributes>
                     <DisplayName
-                      Value="UserOwner" />
+                      Value="Автор заявки" />
                   </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -252,6 +276,10 @@
                   Name="UserItem12"
                   Kind="Details"
                   DataType="UserItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Диспетчер" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -345,163 +373,22 @@
             Kind="Group"
             View="Microsoft.LightSwitch.RichClient:TabsLayout">
             <ContentItem
-              Name="UserItem11"
-              Kind="Details"
-              DataType="UserItem"
-              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="DispatcherScreenDetail/Properties[UserItem1]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="Group1"
-                Kind="Group"
-                View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
-                <ContentItem
-                  Name="UserItem_Image"
-                  Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?"
-                  View="Microsoft.LightSwitch.Extensions:ImageEditorControl">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="DispatcherScreenDetail/Properties[UserItem]" />
-                        <MemberExpression
-                          Member="Image" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Width]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          Value="150"
-                          ResultType=":Double" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Height]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          Value="150"
-                          ResultType=":Double" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
-                </ContentItem>
-                <ContentItem
-                  Name="Group"
-                  Kind="Group"
-                  View="Microsoft.LightSwitch.RichClient:GroupBox">
-                  <ContentItem
-                    Name="UserId2"
-                    Kind="Value"
-                    DataType=":Int32">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="UserItem/Properties[UserId]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="FName2"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="UserItem/Properties[FName]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="LName2"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="UserItem/Properties[LName]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="PName2"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="UserItem/Properties[PName]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Login2"
-                    Kind="Value"
-                    DataType=":String?">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="UserItem/Properties[Login]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Email2"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="UserItem/Properties[Email]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Phone2"
-                    Kind="Value"
-                    DataType=":Int32">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="UserItem/Properties[Phone]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
               Name="ChildCollectionTabs"
               Kind="Group"
               View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Задачи" />
+              </ContentItem.Attributes>
               <ContentItem
                 Name="Task"
                 Kind="Collection"
                 DataType="CollectionView$TaskItem"
                 View="Microsoft.LightSwitch.RichClient:DataGrid">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Задачи" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -520,9 +407,40 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
+                    Name="StatusItem"
+                    Kind="Details"
+                    DataType="StatusItem">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Статус" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="TaskItem/Properties[StatusItem]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="StatusItem1"
+                      Kind="Details"
+                      DataType="StatusItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
                     Name="TaskId"
                     Kind="Value"
                     DataType=":Int32">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Номер задачи" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -533,22 +451,13 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="Description3"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="TaskItem/Properties[Description]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
                     Name="UserItem4"
                     Kind="Details"
                     DataType="UserItem">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Специалист" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -569,27 +478,21 @@
                     </ContentItem>
                   </ContentItem>
                   <ContentItem
-                    Name="StatusItem"
-                    Kind="Details"
-                    DataType="StatusItem">
+                    Name="Description3"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Описание" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="TaskItem/Properties[StatusItem]" />
+                            Member="TaskItem/Properties[Description]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
-                    <ContentItem
-                      Name="StatusItem1"
-                      Kind="Details"
-                      DataType="StatusItem">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
                   </ContentItem>
                 </ContentItem>
                 <ContentItem.CommandItems>
@@ -799,6 +702,16 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem.CommandItems>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:CollectionControlSupportingExport/Properties[HideExportButton]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="True"
+                        ResultType=":Boolean" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -812,6 +725,179 @@
                   </ScreenExpressionTree>
                 </ControlPropertySource>
               </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
+              Name="UserItem11"
+              Kind="Details"
+              DataType="UserItem"
+              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Автор заявки" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="DispatcherScreenDetail/Properties[UserItem1]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="Group1"
+                Kind="Group"
+                View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+                <ContentItem
+                  Name="UserItem_Image"
+                  Kind="Value"
+                  DataType="Microsoft.LightSwitch.Extensions:Image?"
+                  View="Microsoft.LightSwitch.Extensions:ImageEditorControl">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="DispatcherScreenDetail/Properties[UserItem]" />
+                        <MemberExpression
+                          Member="Image" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Width]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="150"
+                          ResultType=":Double" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Height]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="150"
+                          ResultType=":Double" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+                <ContentItem
+                  Name="Group"
+                  Kind="Group"
+                  View="Microsoft.LightSwitch.RichClient:GroupBox">
+                  <ContentItem
+                    Name="UserId2"
+                    Kind="Value"
+                    DataType=":Int32">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UserItem/Properties[UserId]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="FName2"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Имя" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UserItem/Properties[FName]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="LName2"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Фамилия" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UserItem/Properties[LName]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="PName2"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Отчество" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UserItem/Properties[PName]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Login2"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Логин" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UserItem/Properties[Login]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Email2"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UserItem/Properties[Email]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Phone2"
+                    Kind="Value"
+                    DataType=":Int32">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Телефон" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="UserItem/Properties[Phone]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+              </ContentItem>
             </ContentItem>
             <ContentItem
               Name="UserItem1"
@@ -1070,19 +1156,36 @@
               <ContentItem
                 Name="Task_SelectedItem_StatusItemTemplate"
                 Kind="Details"
-                DataType="StatusItem">
+                DataType="StatusItem"
+                View="Microsoft.LightSwitch.Extensions:AddressEditorSmartLayout">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression />
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="StatusItem2"
-                  Kind="Details"
-                  DataType="StatusItem">
+                  Name="StatusId"
+                  Kind="Value"
+                  DataType=":Int32">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
-                      <ChainExpression />
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="StatusItem/Properties[StatusId]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Name="Name"
+                  Kind="Value"
+                  DataType=":String">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="StatusItem/Properties[Name]" />
+                      </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                 </ContentItem>

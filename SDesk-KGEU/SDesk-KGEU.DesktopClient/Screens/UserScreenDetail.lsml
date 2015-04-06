@@ -53,6 +53,10 @@
                   Kind="Value"
                   DataType=":String"
                   View="Microsoft.LightSwitch.RichClient:Label">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Статус" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -284,13 +288,18 @@
                 Name="Group1"
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:TabsLayout">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Текст заяки" />
+                </ContentItem.Attributes>
                 <ContentItem
                   Name="Order_SelectedItem_Description1"
                   Kind="Value"
-                  DataType=":String">
+                  DataType=":String"
+                  View="Microsoft.LightSwitch.RichClient:Label">
                   <ContentItem.Attributes>
                     <DisplayName
-                      Value="Текст заявки " />
+                      Value="Тескт заявки" />
                   </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
@@ -310,7 +319,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="Top"
+                            Value="None"
                             ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -345,32 +354,13 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    Name="UserItem4"
-                    Kind="Details"
-                    DataType="UserItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="TaskItem/Properties[UserItem]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                    <ContentItem
-                      Name="UserItem5"
-                      Kind="Details"
-                      DataType="UserItem">
-                      <ContentItem.DataSource>
-                        <ScreenExpressionTree>
-                          <ChainExpression />
-                        </ScreenExpressionTree>
-                      </ContentItem.DataSource>
-                    </ContentItem>
-                  </ContentItem>
-                  <ContentItem
                     Name="StatusItem"
                     Kind="Details"
                     DataType="StatusItem">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Статус" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -383,6 +373,33 @@
                       Name="StatusItem1"
                       Kind="Details"
                       DataType="StatusItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    Name="UserItem4"
+                    Kind="Details"
+                    DataType="UserItem">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Специалист" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="TaskItem/Properties[UserItem]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="UserItem5"
+                      Kind="Details"
+                      DataType="UserItem">
                       <ContentItem.DataSource>
                         <ScreenExpressionTree>
                           <ChainExpression />
@@ -454,7 +471,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="Top"
+                            Value="None"
                             ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -912,6 +929,7 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="Order"
+        DisableSearch="True"
         PageSize="45"
         PropertyType="CollectionView$OrderItem">
         <ScreenCollectionProperty.Query>
@@ -1003,6 +1021,19 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="StatusItem"
+        PropertyType="StatusItem">
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="DeskData/Members[Status_SingleOrDefault]">
+              <ArgumentExpression
+                Parameter="StatusId" />
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>
