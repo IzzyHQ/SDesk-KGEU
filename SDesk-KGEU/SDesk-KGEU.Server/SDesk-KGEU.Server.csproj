@@ -203,6 +203,8 @@
     </LightSwitchModel>
   </ItemGroup>
   <ItemGroup>
+    <_ServerFile Include="LogIn.aspx" />
+    <_ServerFile Include="LogOut.aspx" />
     <Content Include="Web.config" />
     <LightSwitchModel Include="DataSources\DeskData\Category.lsml" />
     <LightSwitchModel Include="DataSources\DeskData\Comment.lsml" />

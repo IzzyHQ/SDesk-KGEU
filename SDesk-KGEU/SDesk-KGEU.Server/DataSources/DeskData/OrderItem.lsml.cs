@@ -26,11 +26,7 @@ namespace LightSwitchApplication
                 result = "В работе" ;
                 return;
             }
-            else if (this.Task.Any(p => p.StatusItem.StatusId == 5))
-            {
-                result = "Требует уточнения";
-                return;
-            }
+            
             else if (this.Task.All(p=>p.StatusItem.StatusId==3))
             {
                 result = "Выполнена";

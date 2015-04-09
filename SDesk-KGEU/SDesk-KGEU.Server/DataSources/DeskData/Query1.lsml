@@ -21,6 +21,14 @@
             Member="Order" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="ShowAll"
+        IsOptional="True"
+        ParameterType=":String?" />
+      <QueryOperationParameter
+        Name="Showall2"
+        IsOptional="True"
+        ParameterType=":Boolean?" />
     </QueryOperation>
   </EntityContainer>
 </ServiceApplication>

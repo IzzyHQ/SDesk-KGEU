@@ -19,6 +19,80 @@
           Name="ScreenLayout"
           Kind="Group">
           <ContentItem
+            Name="Property1"
+            Kind="Details"
+            DataType="StatusItem"
+            View="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Фильтр" />
+            </ContentItem.Attributes>
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="UserScreenDetail/Properties[Property1]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem
+              Name="Property1Template"
+              Kind="Details"
+              DataType="StatusItem">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                Name="StatusItem2"
+                Kind="Details"
+                DataType="StatusItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    Value="Left"
+                    ResultType=":String" />
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinWidth]">
+                <ScreenExpressionTree>
+                  <ConstantExpression
+                    Value="20"
+                    ResultType=":Double" />
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+          </ContentItem>
+          <ContentItem
+            Name="OrderItemShowAll1"
+            Kind="Value"
+            DataType=":Boolean"
+            View="Microsoft.LightSwitch.RichClient:CheckBox">
+            <ContentItem.Attributes>
+              <DisplayName
+                Value="Показать все" />
+            </ContentItem.Attributes>
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="UserScreenDetail/Properties[OrderItemShowAll1]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
             Name="ListColumn"
             Kind="Group">
             <ContentItem
@@ -837,9 +911,11 @@
             <ControlPropertySource
               Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
               <ScreenExpressionTree>
-                <ConstantExpression
-                  Value="True"
-                  ResultType=":Boolean" />
+                <ChainExpression>
+                  <ConstantExpression
+                    Value="True"
+                    ResultType=":Boolean" />
+                </ChainExpression>
               </ScreenExpressionTree>
             </ControlPropertySource>
           </ContentItem.PropertySources>
@@ -925,6 +1001,8 @@
         Name="AddFile" />
       <ScreenMethod
         Name="OpenFileDialog" />
+      <ScreenMethod
+        Name="Method" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -942,7 +1020,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="DeskData/Members[Order]" />
+                  Member="DeskData/Members[Query1]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -950,7 +1028,24 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="UserScreenDetail/Properties[Order]/Query" />
+              Target="UserScreenDetail/Properties[Order]/Query">
+              <ArgumentExpression
+                Parameter="ShowAll">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="UserScreenDetail/Properties[Property1]" />
+                  <MemberExpression
+                    Member="Name" />
+                </ChainExpression>
+              </ArgumentExpression>
+              <ArgumentExpression
+                Parameter="Showall2">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="UserScreenDetail/Properties[OrderItemShowAll1]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
@@ -1034,6 +1129,12 @@
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenProperty>
+      <ScreenProperty
+        Name="Property1"
+        PropertyType="StatusItem" />
+      <ScreenProperty
+        Name="OrderItemShowAll1"
+        PropertyType=":Boolean" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
