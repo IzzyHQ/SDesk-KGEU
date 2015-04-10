@@ -18,15 +18,17 @@ namespace LightSwitchApplication
           
             
             Order.AddNew();
+          
             this.OpenModalWindow("AddNewOrderModalWnd");
-
+            Order.SelectedItem.UserOwner = DataWorkspace.DeskData.User.Where(p => p.Login == "IlnurV").First();
+            Order.SelectedItem.Status = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 1).First();
         }
 
         partial void SaveNewOrder_Execute()
         {
             // Добавьте сюда свой код.
-           
-            DataWorkspace.DeskData.SaveChanges();
+
+           DataWorkspace.DeskData.SaveChanges();
             this.CloseModalWindow("AddNewOrderModalWnd");
             
 

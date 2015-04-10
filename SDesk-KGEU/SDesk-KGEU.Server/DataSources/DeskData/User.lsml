@@ -52,10 +52,11 @@
       </EntityProperty>
       <EntityProperty
         Name="Login"
-        PropertyType=":String?">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <MaxLength
             Value="50" />
+          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -69,10 +70,13 @@
       </EntityProperty>
       <EntityProperty
         Name="Phone"
-        PropertyType=":Int32">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <Required />
           <NotSearchable />
+          <MaxLength
+            Value="15" />
+          <AnsiConstraint />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -334,7 +338,7 @@
         <SsdlProperty
           MaxLength="50"
           Name="Login"
-          Nullable="True"
+          Nullable="False"
           Type="nvarchar"
           Property="UserItem/Properties[Login]" />
         <SsdlProperty
@@ -344,9 +348,10 @@
           Type="nvarchar"
           Property="UserItem/Properties[Email]" />
         <SsdlProperty
+          MaxLength="15"
           Name="Phone"
           Nullable="False"
-          Type="int"
+          Type="varchar"
           Property="UserItem/Properties[Phone]" />
         <SsdlProperty
           Name="Image"

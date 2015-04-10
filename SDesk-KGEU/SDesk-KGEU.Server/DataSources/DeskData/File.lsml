@@ -38,20 +38,6 @@
         ToEnd="Order" />
     </EntityType.Properties>
   </EntityType>
-  <Association
-    Name="FK_Order_File">
-    <AssociationEnd
-      Name="File"
-      EntityType="FileItem">
-      <AssociationEnd.Attributes>
-        <DeleteRule />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      Name="Order"
-      Multiplicity="Many"
-      EntityType="OrderItem" />
-  </Association>
   <EntityContainer
     Name="DeskData">
     <EntityContainer.Attributes>
@@ -168,6 +154,7 @@
         <SsdlProperty
           Name="FileId"
           Nullable="False"
+          StoreGeneratedPattern="Identity"
           Type="int"
           Property="FileItem/Properties[FileId]" />
         <SsdlProperty
@@ -175,28 +162,12 @@
           Nullable="True"
           Type="varbinary(max)"
           Property="FileItem/Properties[Image]" />
+        <SsdlForeignKeyProperty
+          Name="IdOrder"
+          Nullable="False"
+          Type="int"
+          PropertyName="IdOrder" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
-    <AssociationSetMapping
-      AssociationSet="FK_Order_File">
-      <AssociationSetMapping.Attributes>
-        <SsdlAssociationSet
-          Name="FK_Order_File" />
-        <SsdlAssociationSetEnd
-          End="DeskData/Members[FK_Order_File]/Members[File]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="FileId" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-        <SsdlAssociationSetEnd
-          End="DeskData/Members[FK_Order_File]/Members[Order]">
-          <SsdlAssociationSetEnd.Attributes>
-            <SsdlPropertyRef
-              Name="FileId" />
-          </SsdlAssociationSetEnd.Attributes>
-        </SsdlAssociationSetEnd>
-      </AssociationSetMapping.Attributes>
-    </AssociationSetMapping>
   </DataService>
 </ServiceApplication>

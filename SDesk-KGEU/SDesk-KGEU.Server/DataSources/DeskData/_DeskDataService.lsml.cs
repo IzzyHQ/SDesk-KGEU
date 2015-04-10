@@ -13,6 +13,9 @@ namespace LightSwitchApplication
 
         partial void Query1_PreprocessQuery(string ShowAll, bool? Showall2, ref IQueryable<OrderItem> query)
         {
+            query = query.Where(p => p.UserOwner.Login == "IlnurV");
+
+
             if (ShowAll == "Новая")
             {
                 query = query.Where(p => p.Task.All(z => z.StatusItem == null));
@@ -38,6 +41,12 @@ namespace LightSwitchApplication
                 query = query.Where(p => p.Task.All(z => z.StatusItem.StatusId == 1));
             }
           
+        }
+
+        partial void Query2_PreprocessQuery(ref IQueryable<TaskItem> query)
+        {
+            query = query.Where(p => p.UserItem.Login == "IlnurV");
+            
         }
     }
 }

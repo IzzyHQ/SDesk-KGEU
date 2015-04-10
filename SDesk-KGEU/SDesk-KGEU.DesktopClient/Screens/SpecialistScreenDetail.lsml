@@ -20,167 +20,169 @@
           Kind="Group"
           View="Microsoft.LightSwitch.RichClient:RowsLayout">
           <ContentItem
-            Name="ListColumn"
-            Kind="Group"
-            View="Microsoft.LightSwitch.RichClient:RowsLayout">
+            Name="Task"
+            Kind="Collection"
+            DataType="CollectionView$TaskItem">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="SpecialistScreenDetail/Properties[Task]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
             <ContentItem
-              Name="Task"
-              Kind="Collection"
-              DataType="CollectionView$TaskItem"
-              View="Microsoft.LightSwitch.RichClient:DataGrid">
+              Name="TaskTemplate"
+              Kind="Details"
+              DataType="TaskItem">
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="SpecialistScreenDetail/Properties[Task]" />
-                  </ChainExpression>
+                  <ChainExpression />
                 </ScreenExpressionTree>
               </ContentItem.DataSource>
               <ContentItem
-                Name="RowTemplate11"
-                Kind="Details"
-                DataType="TaskItem">
+                Name="TaskId"
+                Kind="Value"
+                DataType=":Int32">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
-                    <ChainExpression />
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="TaskItem/Properties[TaskId]" />
+                    </ChainExpression>
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
-                <ContentItem
-                  Name="TaskId"
-                  Kind="Value"
-                  DataType=":Int32">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="TaskItem/Properties[TaskId]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="Description3"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="TaskItem/Properties[Description]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
-                  Name="UserItem4"
-                  Kind="Details"
-                  DataType="UserItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="TaskItem/Properties[UserItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="RowTemplate12"
-                    Kind="Details"
-                    DataType="UserItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem
-                  Name="StatusItem4"
-                  Kind="Details"
-                  DataType="StatusItem">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="TaskItem/Properties[StatusItem]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="StatusItem5"
-                    Kind="Details"
-                    DataType="StatusItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression />
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                </ContentItem>
               </ContentItem>
-              <ContentItem.CommandItems>
-                <ContentItem
-                  Name="ReplyToTask"
-                  Kind="Command">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <CallExpression
-                          Target="SpecialistScreenDetail/Methods[ReplyToTask]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-              </ContentItem.CommandItems>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:CollectionControlSupportingExport/Properties[HideExportButton]">
+              <ContentItem
+                Name="Description"
+                Kind="Value"
+                DataType=":String">
+                <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
-                      <ConstantExpression
-                        Value="True"
-                        ResultType=":Boolean" />
+                      <MemberExpression
+                        Member="TaskItem/Properties[Description]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="StatusItem"
+                Kind="Details"
+                DataType="StatusItem"
+                View="Microsoft.LightSwitch.RichClient:Summary">
+                <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
-                      <ConstantExpression
-                        Value="False"
-                        ResultType=":Boolean" />
+                      <MemberExpression
+                        Member="TaskItem/Properties[StatusItem]" />
                     </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox/Properties[AutoCompleteBoxFilterMode]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="None"
+                        ResultType=":String" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="c_Date"
+                Kind="Value"
+                DataType=":DateTime">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="TaskItem/Properties[c_Date]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="DateClose"
+                Kind="Value"
+                DataType=":DateTime?">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="TaskItem/Properties[DateClose]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean" />
                   </ScreenExpressionTree>
                 </ControlPropertySource>
               </ContentItem.PropertySources>
             </ContentItem>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="2"
-                      ResultType=":Double" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
+            <ContentItem.CommandItems>
+              <ContentItem
+                Name="Task_AddAndEditNew"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="SpecialistScreenDetail/Properties[Task]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Task_EditSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="SpecialistScreenDetail/Properties[Task]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Name="Task_DeleteSelected"
+                Kind="Command">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="SpecialistScreenDetail/Properties[Task]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
           </ContentItem>
           <ContentItem
-            Name="DetailsColumn"
-            Kind="Group"
-            View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+            Name="Group"
+            Kind="Group">
             <ContentItem
-              Name="ChildCollectionTabs"
+              Name="Group1"
               Kind="Group"
-              View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+              View="Microsoft.LightSwitch.RichClient:TabsLayout">
               <ContentItem
-                Name="OrderItemList"
+                Name="Order"
                 Kind="Collection"
-                DataType="CollectionView$OrderItem"
-                View="Microsoft.LightSwitch.RichClient:DataGrid">
+                DataType="CollectionView$OrderItem">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -190,7 +192,7 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="RowTemplate"
+                  Name="OrderTemplate"
                   Kind="Details"
                   DataType="OrderItem">
                   <ContentItem.DataSource>
@@ -199,23 +201,9 @@
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
                   <ContentItem
-                    Name="Status"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="OrderItem/Properties[Status]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
                     Name="IdOrder"
                     Kind="Value"
-                    DataType=":Int32"
-                    View="Microsoft.LightSwitch.RichClient:Label">
+                    DataType=":Int32">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -226,10 +214,9 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="Description"
+                    Name="Description1"
                     Kind="Value"
-                    DataType=":String"
-                    View="Microsoft.LightSwitch.RichClient:Label">
+                    DataType=":String">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -240,10 +227,9 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="c_Date"
+                    Name="c_Date1"
                     Kind="Value"
-                    DataType=":Date"
-                    View="Microsoft.LightSwitch.RichClient:DateViewer">
+                    DataType=":Date">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -256,8 +242,7 @@
                   <ContentItem
                     Name="CategoryItem"
                     Kind="Details"
-                    DataType="CategoryItem"
-                    View="Microsoft.LightSwitch.RichClient:Summary">
+                    DataType="CategoryItem">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -266,12 +251,21 @@
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem
+                      Name="CategoryItem1"
+                      Kind="Details"
+                      DataType="CategoryItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
                   </ContentItem>
                   <ContentItem
-                    Name="UserItem"
+                    Name="UserOwner"
                     Kind="Details"
-                    DataType="UserItem"
-                    View="Microsoft.LightSwitch.RichClient:Summary">
+                    DataType="UserItem">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -280,139 +274,8 @@
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
-                    <ContentItem.PropertySources>
-                      <ControlPropertySource
-                        Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[ShowAsLink]">
-                        <ScreenExpressionTree>
-                          <ChainExpression>
-                            <ConstantExpression
-                              Value="True"
-                              ResultType=":Boolean" />
-                          </ChainExpression>
-                        </ScreenExpressionTree>
-                      </ControlPropertySource>
-                    </ContentItem.PropertySources>
-                  </ContentItem>
-                </ContentItem>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="Collapsed"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="Stretch"
-                          ResultType=":String" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:CollectionControlSupportingExport/Properties[HideExportButton]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="True"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:DataGrid/Properties[ShowVirtualRow]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="False"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem
-                Name="Comment"
-                Kind="Collection"
-                DataType="CollectionView$CommentItem"
-                View="Microsoft.LightSwitch.RichClient:List">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <MemberExpression
-                        Member="SpecialistScreenDetail/Properties[Comment]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-                <ContentItem
-                  Name="RowTemplate9"
-                  Kind="Details"
-                  DataType="CommentItem"
-                  View="Microsoft.LightSwitch.RichClient:RowsLayout">
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression />
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                  <ContentItem
-                    Name="CommentId"
-                    Kind="Value"
-                    DataType=":Int32">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="CommentItem/Properties[CommentId]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="Description2"
-                    Kind="Value"
-                    DataType=":String">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="CommentItem/Properties[Description]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="c_Date2"
-                    Kind="Value"
-                    DataType=":DateTime">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="CommentItem/Properties[c_Date]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
-                  </ContentItem>
-                  <ContentItem
-                    Name="UserItem3"
-                    Kind="Details"
-                    DataType="UserItem">
-                    <ContentItem.DataSource>
-                      <ScreenExpressionTree>
-                        <ChainExpression>
-                          <MemberExpression
-                            Member="CommentItem/Properties[UserItem]" />
-                        </ChainExpression>
-                      </ScreenExpressionTree>
-                    </ContentItem.DataSource>
                     <ContentItem
-                      Name="RowTemplate10"
+                      Name="UserItem"
                       Kind="Details"
                       DataType="UserItem">
                       <ContentItem.DataSource>
@@ -422,16 +285,98 @@
                       </ContentItem.DataSource>
                     </ContentItem>
                   </ContentItem>
+                  <ContentItem
+                    Name="DUser"
+                    Kind="Details"
+                    DataType="UserItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="OrderItem/Properties[DUser]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="UserItem1"
+                      Kind="Details"
+                      DataType="UserItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    Name="Status"
+                    Kind="Details"
+                    DataType="StatusItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="OrderItem/Properties[Status]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                    <ContentItem
+                      Name="StatusItem2"
+                      Kind="Details"
+                      DataType="StatusItem">
+                      <ContentItem.DataSource>
+                        <ScreenExpressionTree>
+                          <ChainExpression />
+                        </ScreenExpressionTree>
+                      </ContentItem.DataSource>
+                    </ContentItem>
+                  </ContentItem>
+                  <ContentItem
+                    Name="FullName"
+                    Kind="Value"
+                    DataType=":String">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="OrderItem/Properties[FullName]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="FullName1"
+                    Kind="Value"
+                    DataType=":String?">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="OrderItem/Properties[FullName1]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[BrowseOnly]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem.CommandItems>
                   <ContentItem
-                    Name="Comment_AddAndEditNew"
+                    Name="Order_AddAndEditNew"
                     Kind="Command">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="SpecialistScreenDetail/Properties[Comment]" />
+                            Member="SpecialistScreenDetail/Properties[Order]" />
                           <CallExpression
                             Target="AddAndEditNew" />
                         </ChainExpression>
@@ -439,13 +384,13 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="Comment_EditSelected"
+                    Name="Order_EditSelected"
                     Kind="Command">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="SpecialistScreenDetail/Properties[Comment]" />
+                            Member="SpecialistScreenDetail/Properties[Order]" />
                           <CallExpression
                             Target="EditSelected" />
                         </ChainExpression>
@@ -453,13 +398,13 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
-                    Name="Comment_DeleteSelected"
+                    Name="Order_DeleteSelected"
                     Kind="Command">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="SpecialistScreenDetail/Properties[Comment]" />
+                            Member="SpecialistScreenDetail/Properties[Order]" />
                           <CallExpression
                             Target="DeleteSelected" />
                         </ChainExpression>
@@ -467,278 +412,10 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                 </ContentItem.CommandItems>
-                <ContentItem.PropertySources>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:CollectionControlSupportingExport/Properties[HideExportButton]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="True"
-                          ResultType=":Boolean" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                  <ControlPropertySource
-                    Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <ConstantExpression
-                          Value="0.5"
-                          ResultType=":Double" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ControlPropertySource>
-                </ContentItem.PropertySources>
-              </ContentItem>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="Stretch"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="True"
-                      ResultType=":Boolean" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[WeightedColumnWidth]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="3"
-                      ResultType=":Double" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
-          </ContentItem>
-          <ContentItem
-            Name="ReplyToTaskWnd"
-            IsHidden="True"
-            Kind="Details"
-            DataType="TaskItem"
-            View="Microsoft.LightSwitch.RichClient:ModalWindow">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="SpecialistScreenDetail/Properties[Task]" />
-                  <MemberExpression
-                    Member="SelectedItem" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-            <ContentItem
-              Name="StatusItem"
-              Kind="Details"
-              DataType="StatusItem">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Статус" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="TaskItem/Properties[StatusItem]" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="StatusItem1"
-                Kind="Details"
-                DataType="StatusItem">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
               </ContentItem>
             </ContentItem>
-            <ContentItem
-              Name="Comment_SelectedItem_Description"
-              Kind="Value"
-              DataType=":String">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Коментарий" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="SpecialistScreenDetail/Properties[Comment]" />
-                    <MemberExpression
-                      Member="SelectedItem" />
-                    <MemberExpression
-                      Member="Description" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinWidth]">
-                  <ScreenExpressionTree>
-                    <ConstantExpression
-                      Value="50"
-                      ResultType=":Double" />
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinHeight]">
-                  <ScreenExpressionTree>
-                    <ConstantExpression
-                      Value="30"
-                      ResultType=":Double" />
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Height]">
-                  <ScreenExpressionTree>
-                    <ConstantExpression
-                      Value="200"
-                      ResultType=":Double" />
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[WidthSizingMode]">
-                  <ScreenExpressionTree>
-                    <ConstantExpression
-                      Value="Characters"
-                      ResultType=":String" />
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HeightSizingMode]">
-                  <ScreenExpressionTree>
-                    <ConstantExpression
-                      Value="Lines"
-                      ResultType=":String" />
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:TextBox/Properties[Characters]">
-                  <ScreenExpressionTree>
-                    <ConstantExpression
-                      Value="30"
-                      ResultType=":Int32" />
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.RichClient:TextBox/Properties[Lines]">
-                  <ScreenExpressionTree>
-                    <ConstantExpression
-                      Value="7"
-                      ResultType=":Int32" />
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem
-              Name="Comment_SelectedItem_UserItem"
-              Kind="Details"
-              DataType="UserItem">
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="SpecialistScreenDetail/Properties[Comment]" />
-                    <MemberExpression
-                      Member="SelectedItem" />
-                    <MemberExpression
-                      Member="UserItem" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="UserItem1"
-                Kind="Details"
-                DataType="UserItem">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem.CommandItems>
-              <ContentItem
-                Name="OkReply"
-                Kind="Command">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="SpecialistScreenDetail/Methods[OkReply]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-              <ContentItem
-                Name="CancelReply"
-                Kind="Command">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="SpecialistScreenDetail/Methods[CancelReply]" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem.CommandItems>
-            <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:ModalWindow/Properties[ShowButton]">
-                <ScreenExpressionTree>
-                  <ConstantExpression
-                    Value="False"
-                    ResultType=":Boolean" />
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-            </ContentItem.PropertySources>
           </ContentItem>
         </ContentItem>
-        <ContentItem.CommandItems>
-          <ContentItem
-            Name="Save"
-            Kind="Command">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="SpecialistScreenDetail/Methods[Save]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-          <ContentItem
-            Name="Refresh"
-            Kind="Command">
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <CallExpression
-                    Target="SpecialistScreenDetail/Methods[Refresh]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-        </ContentItem.CommandItems>
       </ContentItem>
     </Screen.RootContentItem>
     <Screen.Methods>
@@ -779,69 +456,8 @@
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
-        Name="Order"
-        DisableSearch="True"
-        PageSize="45"
-        PropertyType="CollectionView$OrderItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="OrderQuery"
-            ReturnType="OrderItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <MemberExpression
-                  Member="DeskData/Members[Order]" />
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="SpecialistScreenDetail/Properties[Order]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
-        Name="Comment"
-        DisableSearch="True"
-        PageSize="15"
-        PropertyType="CollectionView$CommentItem">
-        <ScreenCollectionProperty.Query>
-          <ScreenQueryDefinition
-            Name="CommentQuery"
-            ReturnType="CommentItem*">
-            <ScreenQueryDefinition.FilterExpression>
-              <QueryFilterExpressionTree />
-            </ScreenQueryDefinition.FilterExpression>
-            <ScreenQueryDefinition.Source>
-              <QuerySourceExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="SpecialistScreenDetail/Properties[Order]" />
-                  <MemberExpression
-                    Member="SelectedItem" />
-                  <MemberExpression
-                    Member="Comment" />
-                </ChainExpression>
-              </QuerySourceExpressionTree>
-            </ScreenQueryDefinition.Source>
-          </ScreenQueryDefinition>
-        </ScreenCollectionProperty.Query>
-        <ScreenExpressionTree>
-          <ChainExpression>
-            <CallExpression
-              Target="SpecialistScreenDetail/Properties[Comment]/Query" />
-          </ChainExpression>
-        </ScreenExpressionTree>
-      </ScreenCollectionProperty>
-      <ScreenCollectionProperty
         Name="Task"
-        DisableSearch="True"
-        PageSize="15"
+        PageSize="45"
         PropertyType="CollectionView$TaskItem">
         <ScreenCollectionProperty.Query>
           <ScreenQueryDefinition
@@ -852,14 +468,8 @@
             </ScreenQueryDefinition.FilterExpression>
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="SpecialistScreenDetail/Properties[Order]" />
-                  <MemberExpression
-                    Member="SelectedItem" />
-                  <MemberExpression
-                    Member="Task" />
-                </ChainExpression>
+                <MemberExpression
+                  Member="DeskData/Members[Query2]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -868,6 +478,65 @@
           <ChainExpression>
             <CallExpression
               Target="SpecialistScreenDetail/Properties[Task]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="Order"
+        PageSize="45"
+        PropertyType="CollectionView$OrderItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="OrderQuery"
+            ReturnType="OrderItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree>
+                <BinaryExpression
+                  NodeType="Equal">
+                  <BinaryExpression.Left>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="OrderItem/Properties[IdOrder]" />
+                    </ChainExpression>
+                  </BinaryExpression.Left>
+                  <BinaryExpression.Right>
+                    <ParameterExpression
+                      Parameter="IdOrder" />
+                  </BinaryExpression.Right>
+                </BinaryExpression>
+              </QueryFilterExpressionTree>
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="DeskData/Members[Order]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+            <ScreenQueryDefinition.Parameters>
+              <QueryParameter
+                Name="IdOrder"
+                ParameterType=":Int32?" />
+            </ScreenQueryDefinition.Parameters>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="SpecialistScreenDetail/Properties[Order]/Query">
+              <ArgumentExpression
+                Parameter="IdOrder">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="SpecialistScreenDetail/Properties[Task]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="OrderItem" />
+                  <MemberExpression
+                    Member="IdOrder" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>

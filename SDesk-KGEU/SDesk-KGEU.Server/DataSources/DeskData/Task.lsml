@@ -47,6 +47,27 @@
         Association="FK_Task_Status"
         FromEnd="Task"
         ToEnd="Status" />
+      <EntityProperty
+        Name="c_Date"
+        PropertyType=":DateTime">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DateClose"
+        PropertyType=":DateTime?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="7"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -164,6 +185,16 @@
           Nullable="False"
           Type="nvarchar"
           Property="TaskItem/Properties[Description]" />
+        <SsdlProperty
+          Name="Date"
+          Nullable="False"
+          Type="datetime2"
+          Property="TaskItem/Properties[c_Date]" />
+        <SsdlProperty
+          Name="DateClose"
+          Nullable="True"
+          Type="datetime2"
+          Property="TaskItem/Properties[DateClose]" />
         <SsdlForeignKeyProperty
           Name="OrderId"
           Nullable="False"

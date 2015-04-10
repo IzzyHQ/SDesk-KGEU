@@ -29,7 +29,7 @@
         <EntityProperty.Attributes>
           <Required />
           <MaxLength
-            Value="250" />
+            Value="1000" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
@@ -68,15 +68,6 @@
         Association="FK_Task_Order"
         FromEnd="Order"
         ToEnd="Task" />
-      <EntityProperty
-        Name="Status"
-        IsReadOnly="True"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Computed />
-          <NotSortable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
       <NavigationProperty
         Name="FileItem"
         Association="FK_Order_File"
@@ -102,6 +93,11 @@
           <NotSortable />
         </EntityProperty.Attributes>
       </EntityProperty>
+      <NavigationProperty
+        Name="Status"
+        Association="FK_Order_Status"
+        FromEnd="Order"
+        ToEnd="Status" />
     </EntityType.Properties>
   </EntityType>
   <Association
@@ -246,6 +242,22 @@
       </QueryOperationParameter>
     </QueryOperation>
   </EntityContainer>
+  <Association
+    Name="FK_Order_File">
+    <AssociationEnd
+      Name="File"
+      Multiplicity="Many"
+      EntityType="FileItem" />
+    <AssociationEnd
+      Name="Order"
+      Multiplicity="One"
+      EntityType="OrderItem">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Cascade" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+  </Association>
   <DataService
     Name="DeskDataDataService">
     <DataService.Attributes>
@@ -264,7 +276,7 @@
           Type="int"
           Property="OrderItem/Properties[IdOrder]" />
         <SsdlProperty
-          MaxLength="250"
+          MaxLength="1000"
           Name="Description"
           Nullable="False"
           Type="nvarchar"
@@ -280,10 +292,10 @@
           Type="int"
           PropertyName="CategoryId" />
         <SsdlForeignKeyProperty
-          Name="FileId"
-          Nullable="True"
+          Name="StatusId"
+          Nullable="False"
           Type="int"
-          PropertyName="FileId" />
+          PropertyName="StatusId" />
         <SsdlForeignKeyProperty
           Name="OwnerId"
           Nullable="False"
@@ -313,6 +325,27 @@
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="OrderId" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_Order_File">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_File_Order" />
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_File]/Members[Order]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IdOrder" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="DeskData/Members[FK_Order_File]/Members[File]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="IdOrder" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>

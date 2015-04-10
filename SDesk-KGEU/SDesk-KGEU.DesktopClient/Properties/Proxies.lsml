@@ -100,4 +100,10 @@
         Target="ServiceInterface:UserItem" />
     </EntityType.Attributes>
   </EntityType>
+  <Association>
+    <Association.Attributes>
+      <Proxy
+        Target="ServiceInterface:FK_Order_Status" />
+    </Association.Attributes>
+  </Association>
 </Application>

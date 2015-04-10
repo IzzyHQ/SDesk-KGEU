@@ -16,7 +16,7 @@ namespace LightSwitchApplication
         {
             Task.AddNew();
             this.OpenModalWindow("AddNewTaskModalWnd");
-
+            // Order.SelectedItem.DUser;
         }
 
         partial void SaveNewTask_Execute()

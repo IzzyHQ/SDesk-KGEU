@@ -12,37 +12,7 @@ namespace LightSwitchApplication
     public partial class SpecialistScreenDetail
     {
 
-        partial void ReplyToTask_Execute()
-        {
-           Comment.AddNew();
-          
-
-            this.OpenModalWindow("ReplyToTaskWnd");
-        }
-
-        partial void ReplyToTask_CanExecute(ref bool result)
-        {
-            result = Task.SelectedItem != null;
-        }
-
-        partial void OkReply_Execute()
-        {
- 
-
-            DataWorkspace.DeskData.SaveChanges();
-
-            this.CloseModalWindow("ReplyToTaskWnd");
-        }
-
-        partial void CancelReply_Execute()
-        {
-            DataWorkspace.DeskData.Details.DiscardChanges();
-            this.CloseModalWindow("ReplyToTaskWnd");
-
-        }
-
-
-
-
+       
+      
     }
 }

@@ -38,7 +38,7 @@
         <EntityProperty.Attributes>
           <Required />
           <DateTimeConstraint
-            Precision="3"
+            Precision="7"
             PreserveSeconds="True" />
           <NotSearchable />
         </EntityProperty.Attributes>
@@ -173,7 +173,7 @@
         <SsdlProperty
           Name="Date"
           Nullable="False"
-          Type="datetime"
+          Type="datetime2"
           Property="CommentItem/Properties[c_Date]" />
         <SsdlForeignKeyProperty
           Name="OrderId"

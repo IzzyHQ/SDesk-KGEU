@@ -50,23 +50,6 @@
                   </ScreenExpressionTree>
                 </ContentItem.DataSource>
                 <ContentItem
-                  Name="Status"
-                  Kind="Value"
-                  DataType=":String">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Статус" />
-                  </ContentItem.Attributes>
-                  <ContentItem.DataSource>
-                    <ScreenExpressionTree>
-                      <ChainExpression>
-                        <MemberExpression
-                          Member="OrderItem/Properties[Status]" />
-                      </ChainExpression>
-                    </ScreenExpressionTree>
-                  </ContentItem.DataSource>
-                </ContentItem>
-                <ContentItem
                   Name="IdOrder"
                   Kind="Value"
                   DataType=":Int32"
@@ -218,7 +201,7 @@
                   <ContentItem
                     Name="Login1"
                     Kind="Value"
-                    DataType=":String?">
+                    DataType=":String">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -244,7 +227,7 @@
                   <ContentItem
                     Name="Phone1"
                     Kind="Value"
-                    DataType=":Int32">
+                    DataType=":String">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -852,7 +835,7 @@
                   <ContentItem
                     Name="Login2"
                     Kind="Value"
-                    DataType=":String?">
+                    DataType=":String">
                     <ContentItem.Attributes>
                       <DisplayName
                         Value="Логин" />
@@ -882,7 +865,7 @@
                   <ContentItem
                     Name="Phone2"
                     Kind="Value"
-                    DataType=":Int32">
+                    DataType=":String">
                     <ContentItem.Attributes>
                       <DisplayName
                         Value="Телефон" />
@@ -966,7 +949,7 @@
               <ContentItem
                 Name="Login"
                 Kind="Value"
-                DataType=":String?">
+                DataType=":String">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -992,7 +975,7 @@
               <ContentItem
                 Name="Phone"
                 Kind="Value"
-                DataType=":Int32">
+                DataType=":String">
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>

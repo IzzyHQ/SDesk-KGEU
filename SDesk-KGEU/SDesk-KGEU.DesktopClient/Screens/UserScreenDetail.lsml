@@ -75,24 +75,6 @@
             </ContentItem.PropertySources>
           </ContentItem>
           <ContentItem
-            Name="OrderItemShowAll1"
-            Kind="Value"
-            DataType=":Boolean"
-            View="Microsoft.LightSwitch.RichClient:CheckBox">
-            <ContentItem.Attributes>
-              <DisplayName
-                Value="Показать все" />
-            </ContentItem.Attributes>
-            <ContentItem.DataSource>
-              <ScreenExpressionTree>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="UserScreenDetail/Properties[OrderItemShowAll1]" />
-                </ChainExpression>
-              </ScreenExpressionTree>
-            </ContentItem.DataSource>
-          </ContentItem>
-          <ContentItem
             Name="ListColumn"
             Kind="Group">
             <ContentItem
@@ -124,13 +106,8 @@
                 </ContentItem.DataSource>
                 <ContentItem
                   Name="Status"
-                  Kind="Value"
-                  DataType=":String"
-                  View="Microsoft.LightSwitch.RichClient:Label">
-                  <ContentItem.Attributes>
-                    <DisplayName
-                      Value="Статус" />
-                  </ContentItem.Attributes>
+                  Kind="Details"
+                  DataType="StatusItem">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -139,6 +116,16 @@
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
+                  <ContentItem
+                    Name="StatusItem3"
+                    Kind="Details"
+                    DataType="StatusItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
                 </ContentItem>
                 <ContentItem
                   Name="IdOrder"
@@ -785,37 +772,6 @@
               </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem
-              Name="Order_SelectedItem_UserItem"
-              Kind="Details"
-              DataType="UserItem">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Автор заявки" />
-              </ContentItem.Attributes>
-              <ContentItem.DataSource>
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <MemberExpression
-                      Member="UserScreenDetail/Properties[Order]" />
-                    <MemberExpression
-                      Member="SelectedItem" />
-                    <MemberExpression
-                      Member="UserOwner" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ContentItem.DataSource>
-              <ContentItem
-                Name="UserItem1"
-                Kind="Details"
-                DataType="UserItem">
-                <ContentItem.DataSource>
-                  <ScreenExpressionTree>
-                    <ChainExpression />
-                  </ScreenExpressionTree>
-                </ContentItem.DataSource>
-              </ContentItem>
-            </ContentItem>
-            <ContentItem
               Name="Order_SelectedItem_CategoryItem"
               Kind="Details"
               DataType="CategoryItem">
@@ -916,6 +872,14 @@
                     Value="True"
                     ResultType=":Boolean" />
                 </ChainExpression>
+              </ScreenExpressionTree>
+            </ControlPropertySource>
+            <ControlPropertySource
+              Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+              <ScreenExpressionTree>
+                <ConstantExpression
+                  Value="Top"
+                  ResultType=":String" />
               </ScreenExpressionTree>
             </ControlPropertySource>
           </ContentItem.PropertySources>
