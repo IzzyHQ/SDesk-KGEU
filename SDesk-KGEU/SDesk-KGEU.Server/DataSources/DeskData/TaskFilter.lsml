@@ -10,25 +10,17 @@
       <Partial />
     </EntityContainer.Attributes>
     <QueryOperation
-      Name="Query1"
-      ReturnType="OrderItem*">
+      Name="TaskFilter"
+      ReturnType="TaskItem*">
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree />
       </QueryOperation.FilterExpression>
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="Order" />
+            Member="Task" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="ShowAll"
-        IsOptional="True"
-        ParameterType=":String?" />
-      <QueryOperationParameter
-        Name="Showall2"
-        IsOptional="True"
-        ParameterType=":Boolean?" />
     </QueryOperation>
   </EntityContainer>
 </ServiceApplication>

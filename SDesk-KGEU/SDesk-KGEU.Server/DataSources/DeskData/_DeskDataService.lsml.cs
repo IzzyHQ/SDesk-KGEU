@@ -9,44 +9,39 @@ namespace LightSwitchApplication
     public partial class DeskDataService
     {
 
-
-
-        partial void Query1_PreprocessQuery(string ShowAll, bool? Showall2, ref IQueryable<OrderItem> query)
+        partial void OrderFilter_PreprocessQuery(string ShowAll, ref IQueryable<OrderItem> query)
         {
             query = query.Where(p => p.UserOwner.Login == "IlnurV");
 
 
-            if (ShowAll == "Новая")
+            if (ShowAll == null)
             {
-                query = query.Where(p => p.Task.All(z => z.StatusItem == null));
+                query = query.Where(z => z.Status.StatusId != 4);
+            }
+            else if (ShowAll == "Новая")
+            {
+                query = query.Where(p => p.Status.StatusId == 1);
 
             }
-            else if (ShowAll=="В работе")
+            else if (ShowAll == "В работе")
             {
-                query = query.Where(p => p.Task.Any(z => z.StatusItem.StatusId == 2));
+                query = query.Where(p => p.Status.StatusId == 2);
             }
             else if (ShowAll == "Выполнена")
             {
-                query = query.Where(p => p.Task.Any(z => z.StatusItem.StatusId == 3));
+                query = query.Where(p => p.Status.StatusId == 3);
             }
             else if (ShowAll == "Отклонена")
             {
-                query = query.Where(p => p.Task.Any(z => z.StatusItem.StatusId == 4));
+                query = query.Where(p => p.Status.StatusId == 4);
             }
-
-
-
-            if (!Showall2.Value)
-            {
-                query = query.Where(p => p.Task.All(z => z.StatusItem.StatusId == 1));
-            }
-          
         }
 
-        partial void Query2_PreprocessQuery(ref IQueryable<TaskItem> query)
+
+        partial void TaskFilter_PreprocessQuery(ref IQueryable<TaskItem> query)
         {
             query = query.Where(p => p.UserItem.Login == "IlnurV");
-            
+
         }
     }
 }

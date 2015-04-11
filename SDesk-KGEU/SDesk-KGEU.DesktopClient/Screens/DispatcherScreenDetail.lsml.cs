@@ -15,22 +15,24 @@ namespace LightSwitchApplication
         partial void TaskAdd_Execute()
         {
             Task.AddNew();
+            Task.SelectedItem.StatusItem = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 2).First();
+            
+           Task.SelectedItem.OrderItem.Status = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 2).First();
+           Task.SelectedItem.Description = Order.SelectedItem.Description;
+           Task.SelectedItem.OrderItem.Status = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 4).First();
             this.OpenModalWindow("AddNewTaskModalWnd");
-            // Order.SelectedItem.DUser;
         }
 
         partial void SaveNewTask_Execute()
         {
             DataWorkspace.DeskData.SaveChanges();
             this.CloseModalWindow("AddNewTaskModalWnd");
-
         }
 
         partial void CancelNewTask_Execute()
         {
             DataWorkspace.DeskData.Details.DiscardChanges();
             this.CloseModalWindow("AddNewTaskModalWnd");
-
-        }
+        }      
     }
 }

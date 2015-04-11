@@ -214,10 +214,10 @@
     <LightSwitchModel Include="DataSources\DeskData\User.lsml" />
     <LightSwitchModel Include="Properties\DataSources\DeskData.lsml" />
     <LightSwitchModel Include="DataSources\DeskData\File.lsml" />
-    <LightSwitchModel Include="DataSources\DeskData\Query1.lsml">
+    <LightSwitchModel Include="DataSources\DeskData\OrderFilter.lsml">
       <DependentUpon>Order.lsml</DependentUpon>
     </LightSwitchModel>
-    <LightSwitchModel Include="DataSources\DeskData\Query2.lsml">
+    <LightSwitchModel Include="DataSources\DeskData\TaskFilter.lsml">
       <DependentUpon>Task.lsml</DependentUpon>
     </LightSwitchModel>
     <None Include="Web.Debug.config">

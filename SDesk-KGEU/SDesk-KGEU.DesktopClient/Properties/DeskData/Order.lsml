@@ -14,14 +14,14 @@
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:OrderItem/Properties[FullName]" />
+            Target="LightSwitchServiceApplication:OrderItem/Properties[UserFullName]" />
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty>
         <EntityProperty.Attributes>
           <Computed />
           <Proxy
-            Target="LightSwitchServiceApplication:OrderItem/Properties[FullName1]" />
+            Target="LightSwitchServiceApplication:OrderItem/Properties[DUserFullName]" />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>

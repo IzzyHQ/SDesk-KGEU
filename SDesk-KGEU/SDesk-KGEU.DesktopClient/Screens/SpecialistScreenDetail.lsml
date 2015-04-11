@@ -339,7 +339,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="OrderItem/Properties[FullName]" />
+                            Member="OrderItem/Properties[UserFullName]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -352,7 +352,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <MemberExpression
-                            Member="OrderItem/Properties[FullName1]" />
+                            Member="OrderItem/Properties[DUserFullName]" />
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
@@ -457,6 +457,7 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="Task"
+        DisableSorting="True"
         PageSize="45"
         PropertyType="CollectionView$TaskItem">
         <ScreenCollectionProperty.Query>
@@ -469,7 +470,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="DeskData/Members[Query2]" />
+                  Member="DeskData/Members[TaskFilter]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -483,6 +484,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="Order"
+        DisableSorting="True"
         PageSize="45"
         PropertyType="CollectionView$OrderItem">
         <ScreenCollectionProperty.Query>

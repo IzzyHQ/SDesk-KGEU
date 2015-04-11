@@ -24,6 +24,8 @@
             DataType="StatusItem"
             View="Microsoft.LightSwitch.RichClient:DetailsAutoCompleteBox">
             <ContentItem.Attributes>
+              <Description
+                Value="Новая" />
               <DisplayName
                 Value="Фильтр" />
             </ContentItem.Attributes>
@@ -59,17 +61,11 @@
               <ControlPropertySource
                 Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
                 <ScreenExpressionTree>
-                  <ConstantExpression
-                    Value="Left"
-                    ResultType=":String" />
-                </ScreenExpressionTree>
-              </ControlPropertySource>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinWidth]">
-                <ScreenExpressionTree>
-                  <ConstantExpression
-                    Value="20"
-                    ResultType=":Double" />
+                  <ChainExpression>
+                    <ConstantExpression
+                      Value="Left"
+                      ResultType=":String" />
+                  </ChainExpression>
                 </ScreenExpressionTree>
               </ControlPropertySource>
             </ContentItem.PropertySources>
@@ -108,6 +104,10 @@
                   Name="Status"
                   Kind="Details"
                   DataType="StatusItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Статус" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -235,6 +235,20 @@
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
+                <ContentItem.CommandItems>
+                  <ContentItem
+                    Name="SaveFile"
+                    Kind="Command">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <CallExpression
+                            Target="UserScreenDetail/Methods[SaveFile]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem.CommandItems>
               </ContentItem>
               <ContentItem.CommandItems>
                 <ContentItem
@@ -967,11 +981,13 @@
         Name="OpenFileDialog" />
       <ScreenMethod
         Name="Method" />
+      <ScreenMethod
+        Name="SaveFile" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="Order"
-        DisableSearch="True"
+        DisableSorting="True"
         PageSize="45"
         PropertyType="CollectionView$OrderItem">
         <ScreenCollectionProperty.Query>
@@ -984,7 +1000,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="DeskData/Members[Query1]" />
+                  Member="DeskData/Members[OrderFilter]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -1000,13 +1016,6 @@
                     Member="UserScreenDetail/Properties[Property1]" />
                   <MemberExpression
                     Member="Name" />
-                </ChainExpression>
-              </ArgumentExpression>
-              <ArgumentExpression
-                Parameter="Showall2">
-                <ChainExpression>
-                  <MemberExpression
-                    Member="UserScreenDetail/Properties[OrderItemShowAll1]" />
                 </ChainExpression>
               </ArgumentExpression>
             </CallExpression>
@@ -1081,24 +1090,40 @@
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenProperty
-        Name="StatusItem"
-        PropertyType="StatusItem">
+        Name="Property1"
+        PropertyType="StatusItem" />
+      <ScreenCollectionProperty
+        Name="FileItem"
+        PageSize="45"
+        PropertyType="CollectionView$FileItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="FileItemQuery"
+            ReturnType="FileItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="UserScreenDetail/Properties[Order]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="FileItem" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="DeskData/Members[Status_SingleOrDefault]">
-              <ArgumentExpression
-                Parameter="StatusId" />
-            </CallExpression>
+              Target="UserScreenDetail/Properties[FileItem]/Query" />
           </ChainExpression>
         </ScreenExpressionTree>
-      </ScreenProperty>
-      <ScreenProperty
-        Name="Property1"
-        PropertyType="StatusItem" />
-      <ScreenProperty
-        Name="OrderItemShowAll1"
-        PropertyType=":Boolean" />
+      </ScreenCollectionProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

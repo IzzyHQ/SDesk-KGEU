@@ -36,6 +36,14 @@
         Association="FK_Order_File"
         FromEnd="File"
         ToEnd="Order" />
+      <EntityProperty
+        Name="FileName"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="20" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
     </EntityType.Properties>
   </EntityType>
   <EntityContainer
@@ -162,6 +170,12 @@
           Nullable="True"
           Type="varbinary(max)"
           Property="FileItem/Properties[Image]" />
+        <SsdlProperty
+          MaxLength="20"
+          Name="FileName"
+          Nullable="True"
+          Type="nvarchar"
+          Property="FileItem/Properties[FileName]" />
         <SsdlForeignKeyProperty
           Name="IdOrder"
           Nullable="False"

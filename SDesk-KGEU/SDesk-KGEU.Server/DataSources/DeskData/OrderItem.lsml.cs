@@ -38,12 +38,12 @@ namespace LightSwitchApplication
     //        // Присвоение результату значения нужного поля
     //    }
 
-        partial void FullName_Compute(ref string result)
+        partial void UserFullName_Compute(ref string result)
         {
             result = string.Format("{0} {1}", UserOwner.LName, UserOwner.FName);
         }
 
-        partial void FullName1_Compute(ref string result)
+        partial void DUserFullName_Compute(ref string result)
        {
             //result = string.Format("{0} {1}", DUser.LName, DUser.FName);
 

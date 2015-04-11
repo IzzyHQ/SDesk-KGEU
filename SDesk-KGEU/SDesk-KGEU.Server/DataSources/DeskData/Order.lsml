@@ -74,7 +74,7 @@
         FromEnd="Order"
         ToEnd="File" />
       <EntityProperty
-        Name="FullName"
+        Name="UserFullName"
         IsReadOnly="True"
         PropertyType=":String">
         <EntityProperty.Attributes>
@@ -84,7 +84,7 @@
         </EntityProperty.Attributes>
       </EntityProperty>
       <EntityProperty
-        Name="FullName1"
+        Name="DUserFullName"
         IsReadOnly="True"
         PropertyType=":String?">
         <EntityProperty.Attributes>
