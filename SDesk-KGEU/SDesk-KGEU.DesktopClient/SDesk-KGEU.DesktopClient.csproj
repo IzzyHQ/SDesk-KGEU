@@ -252,6 +252,7 @@
     <LightSwitchModel Include="Screens\UserScreenDetail.lsml" />
     <LightSwitchModel Include="Screens\SpecialistScreenDetail.lsml" />
     <LightSwitchModel Include="Screens\DispatcherScreenDetail.lsml" />
+    <LightSwitchModel Include="Screens\UserListDetail.lsml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\approved-151676_640.png" />
@@ -268,6 +269,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\remove-151678_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Plus_sign.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

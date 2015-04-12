@@ -37,11 +37,37 @@ namespace LightSwitchApplication
             }
         }
 
-
-        partial void TaskFilter_PreprocessQuery(ref IQueryable<TaskItem> query)
+        partial void TaskFilter_PreprocessQuery(string Filter, ref IQueryable<TaskItem> query)
         {
             query = query.Where(p => p.UserItem.Login == "IlnurV");
 
+
+            if (Filter == null)
+            {
+                query = query.Where(z => z.StatusItem.StatusId != 4).Where(z => z.StatusItem.StatusId != 3);
+            }
+            else if (Filter == "Новая")
+            {
+                query = query.Where(p => p.StatusItem.StatusId == 1);
+
+            }
+            else if (Filter == "В работе")
+            {
+                query = query.Where(p => p.StatusItem.StatusId == 2);
+            }
+            else if (Filter == "Выполнена")
+            {
+                query = query.Where(p => p.StatusItem.StatusId == 3);
+            }
+            else if (Filter == "Отклонена")
+            {
+                query = query.Where(p => p.StatusItem.StatusId == 4);
+
+            }
+        
         }
+
+
+       
     }
 }

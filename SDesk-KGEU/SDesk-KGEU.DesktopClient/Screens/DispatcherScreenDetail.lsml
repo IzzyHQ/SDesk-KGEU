@@ -352,6 +352,40 @@
                     </ContentItem.DataSource>
                   </ContentItem>
                   <ContentItem
+                    Name="c_Date1"
+                    Kind="Value"
+                    DataType=":DateTime">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Дата создания" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="TaskItem/Properties[c_Date]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
+                    Name="DateClose"
+                    Kind="Value"
+                    DataType=":DateTime?">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Дата закрытия" />
+                    </ContentItem.Attributes>
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <MemberExpression
+                            Member="TaskItem/Properties[DateClose]" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                  <ContentItem
                     Name="UserItem4"
                     Kind="Details"
                     DataType="UserItem">
@@ -592,44 +626,29 @@
                 Name="Group1"
                 Kind="Group"
                 View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
+                <ContentItem.Attributes>
+                  <DisplayName />
+                </ContentItem.Attributes>
                 <ContentItem
-                  Name="UserItem_Image"
+                  Name="Image"
                   Kind="Value"
-                  DataType="Microsoft.LightSwitch.Extensions:Image?"
-                  View="Microsoft.LightSwitch.Extensions:ImageEditorControl">
+                  DataType="Microsoft.LightSwitch.Extensions:Image?">
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
                         <MemberExpression
-                          Member="DispatcherScreenDetail/Properties[UserItem]" />
-                        <MemberExpression
-                          Member="Image" />
+                          Member="UserItem/Properties[Image]" />
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ContentItem.DataSource>
-                  <ContentItem.PropertySources>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Width]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          Value="150"
-                          ResultType=":Double" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                    <ControlPropertySource
-                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Height]">
-                      <ScreenExpressionTree>
-                        <ConstantExpression
-                          Value="150"
-                          ResultType=":Double" />
-                      </ScreenExpressionTree>
-                    </ControlPropertySource>
-                  </ContentItem.PropertySources>
                 </ContentItem>
                 <ContentItem
                   Name="Group"
                   Kind="Group"
-                  View="Microsoft.LightSwitch.RichClient:GroupBox">
+                  View="Microsoft.LightSwitch.RichClient:RowsLayout">
+                  <ContentItem.Attributes>
+                    <DisplayName />
+                  </ContentItem.Attributes>
                   <ContentItem
                     Name="UserId2"
                     Kind="Value"
@@ -741,8 +760,70 @@
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
                   </ContentItem>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:GroupBox/Properties[ShowDisplayName]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="False"
+                          ResultType=":Boolean" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="LeftAligned"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:ColumnsLayout/Properties[IsColumnResizable]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="True"
+                          ResultType=":Boolean" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[VerticalAlignment]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="Top"
+                        ResultType=":String" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HorizontalAlignment]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="Left"
+                        ResultType=":String" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="None"
+                        ResultType=":String" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+                  <ScreenExpressionTree>
+                    <ConstantExpression
+                      Value="True"
+                      ResultType=":Boolean" />
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.PropertySources>
               <ControlPropertySource
@@ -1029,6 +1110,7 @@
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="Order"
+        DisablePaging="True"
         DisableSorting="True"
         PageSize="45"
         PropertyType="CollectionView$OrderItem">
@@ -1056,6 +1138,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="Comment"
+        DisablePaging="True"
         DisableSearch="True"
         DisableSorting="True"
         PageSize="15"
@@ -1090,6 +1173,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="Task"
+        DisablePaging="True"
         DisableSearch="True"
         DisableSorting="True"
         PageSize="15"

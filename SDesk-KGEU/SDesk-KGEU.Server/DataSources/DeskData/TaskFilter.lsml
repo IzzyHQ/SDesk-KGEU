@@ -21,6 +21,9 @@
             Member="Task" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Filter"
+        ParameterType=":String?" />
     </QueryOperation>
   </EntityContainer>
 </ServiceApplication>

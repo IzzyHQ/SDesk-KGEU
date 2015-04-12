@@ -272,7 +272,7 @@
                       <ScreenExpressionTree>
                         <ChainExpression>
                           <ConstantExpression
-                            Value="Microsoft.LightSwitch.UserImageResources::Resources\approved-151676_640.png"
+                            Value="Microsoft.LightSwitch.UserImageResources::Resources\Plus_sign.png"
                             ResultType=":String" />
                         </ChainExpression>
                       </ScreenExpressionTree>
@@ -983,10 +983,13 @@
         Name="Method" />
       <ScreenMethod
         Name="SaveFile" />
+      <ScreenMethod
+        Name="EditProfile" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
         Name="Order"
+        DisablePaging="True"
         DisableSorting="True"
         PageSize="45"
         PropertyType="CollectionView$OrderItem">
@@ -1024,6 +1027,7 @@
       </ScreenCollectionProperty>
       <ScreenCollectionProperty
         Name="Comment"
+        DisablePaging="True"
         PageSize="15"
         PropertyType="CollectionView$CommentItem">
         <ScreenCollectionProperty.Query>

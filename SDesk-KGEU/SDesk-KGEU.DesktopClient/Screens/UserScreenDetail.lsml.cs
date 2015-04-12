@@ -109,5 +109,12 @@ namespace LightSwitchApplication
                 }
             });
         }
+
+        partial void EditProfile_Execute()
+        {
+
+            
+
+        }
     }
 }

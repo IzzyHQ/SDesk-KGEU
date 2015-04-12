@@ -45,6 +45,9 @@
     <ApplicationCommand
       Name="ScreenCommandShowDispatcherScreenDetail"
       Target="!module/Methods[ShowDispatcherScreenDetail]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowUserListDetail"
+      Target="!module/Methods[ShowUserListDetail]" />
   </Application.Commands>
   <Application.NavigationItems>
     <ApplicationNavigationGroup
@@ -63,6 +66,9 @@
       <ApplicationNavigationLink
         Name="DispatcherScreenDetail"
         Command="!module/Commands[ScreenCommandShowDispatcherScreenDetail]" />
+      <ApplicationNavigationLink
+        Name="UserListDetail"
+        Command="!module/Commands[ScreenCommandShowUserListDetail]" />
     </ApplicationNavigationGroup>
     <ApplicationNavigationGroup
       Name="Administration">

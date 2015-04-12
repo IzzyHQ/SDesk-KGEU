@@ -17,12 +17,12 @@ namespace LightSwitchApplication
             Task.AddNew();
             Task.SelectedItem.StatusItem = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 2).First();
             
-           Task.SelectedItem.OrderItem.Status = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 2).First();
-           Task.SelectedItem.Description = Order.SelectedItem.Description;
-           Task.SelectedItem.OrderItem.Status = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 4).First();
-            this.OpenModalWindow("AddNewTaskModalWnd");
+           Task.SelectedItem.Description = Order.SelectedItem.Description;         
+           this.OpenModalWindow("AddNewTaskModalWnd");
+            
         }
 
+      
         partial void SaveNewTask_Execute()
         {
             DataWorkspace.DeskData.SaveChanges();
@@ -31,8 +31,11 @@ namespace LightSwitchApplication
 
         partial void CancelNewTask_Execute()
         {
+            
             DataWorkspace.DeskData.Details.DiscardChanges();
             this.CloseModalWindow("AddNewTaskModalWnd");
         }      
+
+       
     }
 }

@@ -12,7 +12,13 @@ namespace LightSwitchApplication
     public partial class SpecialistScreenDetail
     {
 
-       
-      
+
+
+        partial void CloseTask_Execute()
+        {
+            Task.SelectedItem.StatusItem = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 3).FirstOrDefault();
+            Task.SelectedItem.DateClose = DateTime.Now;
+            DataWorkspace.DeskData.SaveChanges();
+        }
     }
 }
