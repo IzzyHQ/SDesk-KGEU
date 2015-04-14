@@ -18,15 +18,46 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
-    <ApplicationClientType>Desktop</ApplicationClientType>
-    <ApplicationServerType>LocalHost</ApplicationServerType>
+    <ApplicationClientType>Browser</ApplicationClientType>
+    <ApplicationServerType>IIS</ApplicationServerType>
     <AuthenticationType>Forms</AuthenticationType>
     <ApplicationName>SDesk_KGEU</ApplicationName>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyVersion>1.0.12.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
     <DefaultLanguage>ru</DefaultLanguage>
+    <AdministratorFullName>IlnurV</AdministratorFullName>
+    <AdministratorUserName>IlnurV</AdministratorUserName>
+    <AllowUntrustedCertificate>False</AllowUntrustedCertificate>
+    <DeployDatabase>True</DeployDatabase>
+    <AddAdministrator>True</AddAdministrator>
+    <BootstrapperComponentsUrl />
+    <DefaultInstallLocation>SDesk_KGEU</DefaultInstallLocation>
+    <DeploySchema>True</DeploySchema>
+    <PublishNewDatabase>False</PublishNewDatabase>
+    <PublishUrl>http://ilnurv-001-site1.mywindowshosting.com</PublishUrl>
+    <PublishSite>http://ilnurv-001-site1.mywindowshosting.com/</PublishSite>
+    <RemotePublish>False</RemotePublish>
+    <SkipExtraFilesOnServer>True</SkipExtraFilesOnServer>
+    <UseLightSwitchWebDeploymentProvider>False</UseLightSwitchWebDeploymentProvider>
+    <AzureAllowUpgrade>True</AzureAllowUpgrade>
+    <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
+    <AzureDeploymentLabel>SDesk_KGEU</AzureDeploymentLabel>
+    <AzureWebSite />
+    <AzureWebSpace />
+    <AzureServiceType>WebSite</AzureServiceType>
+    <AzureHostedService />
+    <AzureHostedServiceLabel>Production</AzureHostedServiceLabel>
+    <AzureStorageService />
+    <SslCertificateThumbprint />
+    <PublishServiceOnly>False</PublishServiceOnly>
+    <AzureCredentials />
+    <SharePointServerToServerCertificatePath />
+    <SharePointServerToServerCertificateIssuerId />
+    <RequireSecureConnection>False</RequireSecureConnection>
+    <AllowAllWindowsUsers>false</AllowAllWindowsUsers>
+    <PublishLocation>C:\Publish1\</PublishLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug</OutputPath>
@@ -105,6 +136,12 @@
       <Private>True</Private>
       <Type>Client</Type>
     </ProjectReference>
+    <ProjectReference Include="SDesk-KGEU.HTMLClient\SDesk-KGEU.HTMLClient.jsproj">
+      <Name>SDesk-KGEU.HTMLClient</Name>
+      <Project>{bc1c6210-49b0-4344-8db5-8bf5e4fcd5e1}</Project>
+      <Private>True</Private>
+      <Type>Client</Type>
+    </ProjectReference>
     <ProjectReference Include="SDesk-KGEU.Server\SDesk-KGEU.Server.csproj">
       <Name>SDesk-KGEU.Server</Name>
       <Project>{50566aa4-6024-44c3-b326-f160d6d34c3e}</Project>
@@ -136,6 +173,16 @@
       <PublishType>
       </PublishType>
     </_BuildFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Install>True</Install>
+      <Name>.NETFramework,Version=v4.0</Name>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Install>True</Install>
+      <Name>Microsoft.Windows.Installer.4.5</Name>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.targets" />
 </Project>

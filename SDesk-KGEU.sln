@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDesk-KGEU.Server", "SDesk-
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDesk-KGEU.DesktopClient", "SDesk-KGEU\SDesk-KGEU.DesktopClient\SDesk-KGEU.DesktopClient.csproj", "{78298F71-FD7A-4262-BA4D-0C07372E328E}"
 EndProject
+Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "SDesk-KGEU.HTMLClient", "SDesk-KGEU\SDesk-KGEU.HTMLClient\SDesk-KGEU.HTMLClient.jsproj", "{BC1C6210-49B0-4344-8DB5-8BF5E4FCD5E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{78298F71-FD7A-4262-BA4D-0C07372E328E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78298F71-FD7A-4262-BA4D-0C07372E328E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78298F71-FD7A-4262-BA4D-0C07372E328E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1C6210-49B0-4344-8DB5-8BF5E4FCD5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1C6210-49B0-4344-8DB5-8BF5E4FCD5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1C6210-49B0-4344-8DB5-8BF5E4FCD5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1C6210-49B0-4344-8DB5-8BF5E4FCD5E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
