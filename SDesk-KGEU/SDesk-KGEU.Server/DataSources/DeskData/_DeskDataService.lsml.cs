@@ -67,12 +67,23 @@ namespace LightSwitchApplication
         
         }
 
-        partial void HtmlOrderFilter_PreprocessQuery(ref IQueryable<OrderItem> query)
+        partial void HtmlOrderFilter_PreprocessQuery(string paramSort, ref IQueryable<OrderItem> query)
         {
             query = query.Where(p => p.UserOwner.Login == "IlnurV");
+           // query = query.Where(x => x.Status.StatusId != 3).Where(z => z.Status.StatusId != 4);
 
-            
-                query = query.Where(z => z.Status.StatusId != 4).Where(z => z.Status.StatusId != 3);
+            // Set the Sort
+            if (paramSort == "New")
+            {
+                query = query.Where(x => x.Status.StatusId != 3).Where(z => z.Status.StatusId != 4);
+            }
+
+            if (paramSort == "All")
+            {
+                query = query.Where(x => x.Status.StatusId!=0);
+            }
+
+          
             
         }
 

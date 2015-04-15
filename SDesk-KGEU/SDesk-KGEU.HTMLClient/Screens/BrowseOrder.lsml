@@ -59,6 +59,21 @@
               </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem
+              Name="Filter"
+              Kind="Command">
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <CallExpression
+                        Target="BrowseOrder/Methods[Filter]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+            </ContentItem>
+            <ContentItem
               Name="Order1"
               Kind="Collection"
               DataType="CollectionView$OrderItem"
@@ -337,6 +352,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="Filter" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -356,25 +373,26 @@
                   Member="DeskData/Members[HtmlOrderFilter]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
-            <ScreenQueryDefinition.SortCriteria>
-              <SortCriterion>
-                <ChainExpression>
-                  <MemberExpression
-                    Member="Status" />
-                  <MemberExpression
-                    Member="StatusId" />
-                </ChainExpression>
-              </SortCriterion>
-            </ScreenQueryDefinition.SortCriteria>
           </ScreenQueryDefinition>
         </ScreenCollectionProperty.Query>
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseOrder/Properties[Order]/Query" />
+              Target="BrowseOrder/Properties[Order]/Query">
+              <ArgumentExpression
+                Parameter="paramSort">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseOrder/Properties[OrderItemparamSort]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
+      <ScreenProperty
+        Name="OrderItemparamSort"
+        PropertyType=":String?" />
     </Screen.Properties>
   </Screen>
   <Application.Methods>
