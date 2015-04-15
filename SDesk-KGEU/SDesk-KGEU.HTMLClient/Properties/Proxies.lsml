@@ -28,12 +28,6 @@
         Target="ServiceInterface:StatusItem" />
     </EntityType.Attributes>
   </EntityType>
-  <EntityType>
-    <EntityType.Attributes>
-      <Proxy
-        Target="ServiceInterface:UserItem" />
-    </EntityType.Attributes>
-  </EntityType>
   <EntityContainer>
     <EntityContainer.Attributes>
       <Proxy
@@ -104,6 +98,12 @@
     <EntityType.Attributes>
       <Proxy
         Target="ServiceInterface:TaskItem" />
+    </EntityType.Attributes>
+  </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:UserItem" />
     </EntityType.Attributes>
   </EntityType>
 </Application>

@@ -220,6 +220,9 @@
     <LightSwitchModel Include="DataSources\DeskData\TaskFilter.lsml">
       <DependentUpon>Task.lsml</DependentUpon>
     </LightSwitchModel>
+    <LightSwitchModel Include="DataSources\DeskData\HtmlOrderFilter.lsml">
+      <DependentUpon>Order.lsml</DependentUpon>
+    </LightSwitchModel>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -252,7 +255,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>0</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:51810/</IISUrl>
+          <IISUrl>http://localhost:29983/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

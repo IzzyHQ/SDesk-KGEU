@@ -67,6 +67,15 @@ namespace LightSwitchApplication
         
         }
 
+        partial void HtmlOrderFilter_PreprocessQuery(ref IQueryable<OrderItem> query)
+        {
+            query = query.Where(p => p.UserOwner.Login == "IlnurV");
+
+            
+                query = query.Where(z => z.Status.StatusId != 4).Where(z => z.Status.StatusId != 3);
+            
+        }
+
 
        
     }

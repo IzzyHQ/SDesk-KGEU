@@ -18,8 +18,8 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
-    <ApplicationClientType>Browser</ApplicationClientType>
-    <ApplicationServerType>IIS</ApplicationServerType>
+    <ApplicationClientType>Desktop</ApplicationClientType>
+    <ApplicationServerType>LocalHost</ApplicationServerType>
     <AuthenticationType>Forms</AuthenticationType>
     <ApplicationName>SDesk_KGEU</ApplicationName>
     <AssemblyVersion>1.0.12.0</AssemblyVersion>

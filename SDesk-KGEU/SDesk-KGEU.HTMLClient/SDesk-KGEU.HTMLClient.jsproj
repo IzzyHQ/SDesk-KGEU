@@ -66,6 +66,9 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\AddEditOrderItem.lsml.js">
+      <DependentUpon>AddEditOrderItem.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\BrowseOrder.lsml.js">
       <DependentUpon>BrowseOrder.lsml</DependentUpon>
     </Content>
@@ -83,6 +86,10 @@
     <Content Include="Scripts\msls-2.5.2.min.js" />
     <Content Include="Scripts\winjs-1.0.js" />
     <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\OrderItem.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ServiceMetadataReference Include="..\SDesk-KGEU.Server\SDesk-KGEU.Server.csproj">
