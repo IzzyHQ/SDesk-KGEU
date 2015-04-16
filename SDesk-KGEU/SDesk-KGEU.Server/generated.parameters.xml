@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="SDesk-KGEU_IisWebApplication" description="IIS Web Application content location" defaultValue="Default Web Site/SDesk_KGEU" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\lol\\Source\\Repos\\SDesk-KGEU3\\SDesk-KGEU\\bin\\Release\\app\.publish\\$" />
+  </parameter>
+  <parameter name="DeskData" description="Configure the ConnectionString" defaultValue="data source=SQL5002.myWindowsHosting.com;initial catalog=DB_9C0D4E_IlnurV;user id=DB_9C0D4E_IlnurV_admin;password=SdeskKgeu" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='DeskData']/@connectionString" />
+  </parameter>
+</parameters>
