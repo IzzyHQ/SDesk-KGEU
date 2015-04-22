@@ -101,7 +101,7 @@ namespace LightSwitchApplication
                 if (sfd.ShowDialog() == true)
                 {
                     string path = FileItem.SelectedItem.FileName;
-                    using (FileStream fs = new FileStream(sfd.SafeFileName + path, FileMode.Create))
+                    using (FileStream fs = new FileStream(sfd.SafeFileName, FileMode.Create))
                     {
                         byte[] buf = new byte[fs.Length];
                         buf = FileItem.SelectedItem.Image;
