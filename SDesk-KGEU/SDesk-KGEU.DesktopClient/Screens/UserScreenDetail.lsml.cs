@@ -82,7 +82,7 @@ namespace LightSwitchApplication
                         fs.Read(buf, 0, buf.Length);
 
                         var v = Order.SelectedItem.FileItem.AddNew();
-                        v.FileName = ofd.File.Extension;
+                        v.FileName = ofd.File.Name;
                         v.Image = buf;
                     }
                 }
@@ -96,6 +96,7 @@ namespace LightSwitchApplication
                 SaveFileDialog sfd = new SaveFileDialog();
 
                 sfd.Filter = "All files (*.*)|*.*";
+                sfd.DefaultFileName = FileItem.SelectedItem.FileName;
                 sfd.FilterIndex = 2;
                 if (sfd.ShowDialog() == true)
                 {
