@@ -87,6 +87,12 @@ namespace LightSwitchApplication
             
         }
 
+        partial void Order_Inserting(OrderItem entity)
+        {
+            
+        }
+
+
 
        
     }

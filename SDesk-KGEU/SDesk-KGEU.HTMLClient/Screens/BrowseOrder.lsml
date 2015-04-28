@@ -23,42 +23,6 @@
             Name="OrderItemList"
             Kind="Group">
             <ContentItem
-              Name="AddOrderItem"
-              Kind="Command">
-              <ContentItem.Attributes>
-                <DisplayName
-                  Value="Добавить заявку" />
-              </ContentItem.Attributes>
-              <ContentItem.PropertySources>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <CallExpression
-                        Target="!module/Methods[showAddEditOrderItem]">
-                        <CallExpression.Attributes>
-                          <AssociatedCollection
-                            Collection="BrowseOrder/Properties[Order]" />
-                          <CreateNewEntity
-                            TargetParameter="!module/Methods[showAddEditOrderItem]/Parameters[OrderItem]" />
-                        </CallExpression.Attributes>
-                      </CallExpression>
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-                <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
-                  <ScreenExpressionTree>
-                    <ChainExpression>
-                      <ConstantExpression
-                        Value="msls-add"
-                        ResultType=":String" />
-                    </ChainExpression>
-                  </ScreenExpressionTree>
-                </ControlPropertySource>
-              </ContentItem.PropertySources>
-            </ContentItem>
-            <ContentItem
               Name="Filter"
               Kind="Command">
               <ContentItem.PropertySources>
@@ -291,6 +255,38 @@
                         <ConstantExpression
                           Value="msls-search"
                           ResultType="Microsoft.LightSwitch:String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="AddOrderItem1"
+                Kind="Command">
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootCommand/Properties[Icon]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="msls-add"
+                          ResultType=":String" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showAddEditOrderItem]">
+                          <CallExpression.Attributes>
+                            <AssociatedCollection
+                              Collection="BrowseOrder/Properties[Order]" />
+                            <CreateNewEntity
+                              TargetParameter="!module/Methods[showAddEditOrderItem]/Parameters[OrderItem]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>

@@ -480,17 +480,16 @@
               View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
               <ContentItem
                 Name="Group1"
-                Kind="Group"
-                View="Microsoft.LightSwitch.RichClient:TabsLayout">
+                Kind="Group">
                 <ContentItem.Attributes>
                   <DisplayName
                     Value="Текст заяки" />
+                  <Description />
                 </ContentItem.Attributes>
                 <ContentItem
                   Name="Order_SelectedItem_Description1"
                   Kind="Value"
-                  DataType=":String"
-                  View="Microsoft.LightSwitch.RichClient:Label">
+                  DataType=":String">
                   <ContentItem.Attributes>
                     <DisplayName
                       Value="Тескт заявки" />
@@ -509,17 +508,65 @@
                   </ContentItem.DataSource>
                   <ContentItem.PropertySources>
                     <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:TextBox/Properties[Lines]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="10"
+                          ResultType=":Int32" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HeightSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="Auto"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
                       Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
                       <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="None"
-                            ResultType=":String" />
-                        </ChainExpression>
+                        <ConstantExpression
+                          Value="Top"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[Width]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="350"
+                          ResultType=":Double" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="Auto"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[MinWidth]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="60"
+                          ResultType=":Double" />
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
                 </ContentItem>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.RichClient:ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+                    <ScreenExpressionTree>
+                      <ConstantExpression
+                        Value="True"
+                        ResultType=":Boolean" />
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
               </ContentItem>
               <ContentItem
                 Name="Task"
@@ -638,7 +685,7 @@
               <ContentItem
                 Name="Group2"
                 Kind="Group"
-                View="Microsoft.LightSwitch.RichClient:TabsLayout">
+                View="Microsoft.LightSwitch.RichClient:ColumnsLayout">
                 <ContentItem
                   Name="Task_SelectedItem_Description"
                   Kind="Value"
@@ -661,13 +708,27 @@
                   </ContentItem.DataSource>
                   <ContentItem.PropertySources>
                     <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[WidthSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="Auto"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[HeightSizingMode]">
+                      <ScreenExpressionTree>
+                        <ConstantExpression
+                          Value="Auto"
+                          ResultType=":String" />
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                    <ControlPropertySource
                       Property="Microsoft.LightSwitch.RichClient:RootControl/Properties[AttachedLabelPosition]">
                       <ScreenExpressionTree>
-                        <ChainExpression>
-                          <ConstantExpression
-                            Value="None"
-                            ResultType=":String" />
-                        </ChainExpression>
+                        <ConstantExpression
+                          Value="Top"
+                          ResultType=":String" />
                       </ScreenExpressionTree>
                     </ControlPropertySource>
                   </ContentItem.PropertySources>
@@ -1104,6 +1165,10 @@
         Name="SaveFile" />
       <ScreenMethod
         Name="EditProfile" />
+      <ScreenMethod
+        Name="SaveAllFiles" />
+      <ScreenMethod
+        Name="SaveToDb" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty

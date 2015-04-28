@@ -2,9 +2,12 @@
 
 myapp.OrderItem.created = function (entity) {
     // Write code here.
+    
+    entity.IdOrder = 0;
+
     entity.c_Date = new Date();
 
-    
+ 
 
     myapp.activeDataWorkspace.DeskData.User.top(1).execute().then(function (result) {
         entity.UserOwner = result.results[0];
@@ -15,4 +18,8 @@ myapp.OrderItem.created = function (entity) {
         entity.Status = result.results[0];
     });
     
+
+
+
+
 };
