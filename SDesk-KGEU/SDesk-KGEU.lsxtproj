@@ -18,11 +18,11 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
     <BaseIntermediateOutputPath>bin</BaseIntermediateOutputPath>
-    <ApplicationClientType>Desktop</ApplicationClientType>
+    <ApplicationClientType>Browser</ApplicationClientType>
     <ApplicationServerType>IIS</ApplicationServerType>
-    <AuthenticationType>None</AuthenticationType>
-    <ApplicationName>SDesk_KGEU</ApplicationName>
-    <AssemblyVersion>1.0.14.0</AssemblyVersion>
+    <AuthenticationType>Forms</AuthenticationType>
+    <ApplicationName>SDesk_KGEU1</ApplicationName>
+    <AssemblyVersion>1.0.23.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>
@@ -31,15 +31,15 @@
     <AdministratorUserName>IlnurV</AdministratorUserName>
     <AllowUntrustedCertificate>False</AllowUntrustedCertificate>
     <DeployDatabase>True</DeployDatabase>
-    <AddAdministrator>True</AddAdministrator>
+    <AddAdministrator>False</AddAdministrator>
     <BootstrapperComponentsUrl />
     <DefaultInstallLocation>SDesk_KGEU</DefaultInstallLocation>
     <DeploySchema>True</DeploySchema>
     <PublishNewDatabase>False</PublishNewDatabase>
-    <PublishUrl>http://ilnurv-001-site1.mywindowshosting.com</PublishUrl>
-    <PublishSite>http://ilnurv-001-site1.mywindowshosting.com/</PublishSite>
-    <RemotePublish>False</RemotePublish>
-    <SkipExtraFilesOnServer>True</SkipExtraFilesOnServer>
+    <PublishUrl>https://sdeskkgeu-001-site1.mywindowshosting.com:8172/MsDeploy.axd</PublishUrl>
+    <PublishSite>sdeskkgeu-001-site1</PublishSite>
+    <RemotePublish>True</RemotePublish>
+    <SkipExtraFilesOnServer>False</SkipExtraFilesOnServer>
     <UseLightSwitchWebDeploymentProvider>False</UseLightSwitchWebDeploymentProvider>
     <AzureAllowUpgrade>True</AzureAllowUpgrade>
     <AzureAppendTimestampToDeploymentLabel>True</AzureAppendTimestampToDeploymentLabel>
@@ -57,7 +57,7 @@
     <SharePointServerToServerCertificateIssuerId />
     <RequireSecureConnection>False</RequireSecureConnection>
     <AllowAllWindowsUsers>false</AllowAllWindowsUsers>
-    <PublishLocation>C:\Publish17\</PublishLocation>
+    <PublishLocation>C:\Publish4\</PublishLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <OutputPath>bin\Debug</OutputPath>

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using Microsoft.LightSwitch;
 using Microsoft.LightSwitch.Security.Server;
+using System.Linq.Expressions;
+
 namespace LightSwitchApplication
 {
     public partial class DeskDataService
     {
-
+        
         partial void OrderFilter_PreprocessQuery(string ShowAll, ref IQueryable<OrderItem> query)
         {
             query = query.Where(p => p.UserOwner.Login == "IlnurV");
@@ -67,12 +69,28 @@ namespace LightSwitchApplication
         
         }
 
-        partial void HtmlOrderFilter_PreprocessQuery(string paramSort, ref IQueryable<OrderItem> query)
-        {
-            query = query.Where(p => p.UserOwner.Login == "IlnurV");
-           // query = query.Where(x => x.Status.StatusId != 3).Where(z => z.Status.StatusId != 4);
+  
 
-            // Set the Sort
+        partial void Order_Inserting(OrderItem entity)
+        {
+            string currentUser = Application.User.Identity.Name;
+            entity.UserOwner = DataWorkspace.DeskData.User.Where(p => p.Login == currentUser).FirstOrDefault();
+        }
+
+        partial void Order_Filter(ref Expression<Func<OrderItem, bool>> filter)
+        {
+            filter = (x => x.UserOwner.Login == Application.User.Identity.Name);
+
+        }
+
+        partial void Order_Updating(OrderItem entity)
+        {
+            entity.UserOwner = DataWorkspace.DeskData.User.Where(p => p.Login == this.Application.User.Name).FirstOrDefault();
+        }
+
+        partial void OrdersForUser_PreprocessQuery(string paramSort, ref IQueryable<OrderItem> query)
+        {
+            query = query.Where(x => x.UserOwner.Login == this.Application.User.Name);
             if (paramSort == "New")
             {
                 query = query.Where(x => x.Status.StatusId != 3).Where(z => z.Status.StatusId != 4);
@@ -80,16 +98,20 @@ namespace LightSwitchApplication
 
             if (paramSort == "All")
             {
-                query = query.Where(x => x.Status.StatusId!=0);
+                query = query.Where(x => x.Status.StatusId != 0);
             }
-
-          
-            
         }
 
-        partial void Order_Inserting(OrderItem entity)
+        partial void Comment_Inserting(CommentItem entity)
         {
-            
+            string currentUser = Application.User.Identity.Name;
+            entity.UserItem = DataWorkspace.DeskData.User.Where(p => p.Login == currentUser).FirstOrDefault();
+        }
+
+        partial void Comment_Updated(CommentItem entity)
+        {
+            string currentUser = Application.User.Identity.Name;
+            entity.UserItem = DataWorkspace.DeskData.User.Where(p => p.Login == currentUser).FirstOrDefault();
         }
 
 

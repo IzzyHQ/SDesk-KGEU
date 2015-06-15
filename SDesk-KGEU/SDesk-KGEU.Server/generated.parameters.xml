@@ -1,9 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="SDesk-KGEU_IisWebApplication" description="IIS Web Application content location" defaultValue="Default Web Site/SDesk_KGEU" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\lol\\Source\\Repos\\SDesk-KGEU3\\SDesk-KGEU\\bin\\Release\\app\.publish\\$" />
+  <parameter name="DatabaseAdministratorConnectionString" description="Connection used to create or update the application database." defaultValue="" tags="SQLConnectionString" />
+  <parameter name="DatabaseServer" description="Name of the server that hosts the application database. Must match the server specified in the connection string." defaultValue="" tags="SQL" />
+  <parameter name="DatabaseName" description="Name of the application database. Must match the database specified in the connection string." defaultValue="SDesk-KGEU" tags="SQL">
+    <parameterEntry kind="SqlCommandVariable" scope="SDesk-KGEU.sql" match="DatabaseName" />
   </parameter>
-  <parameter name="DeskData" description="Configure the ConnectionString" defaultValue="data source=SQL5002.myWindowsHosting.com;initial catalog=DB_9C0D4E_IlnurV;user id=DB_9C0D4E_IlnurV_admin;password=SdeskKgeu" tags="SqlConnectionString">
+  <parameter name="DatabaseUserName" description="User name that the application will use to connect to the application database." defaultValue="" tags="SQL">
+    <parameterEntry kind="SqlCommandVariable" scope="SDesk-KGEU.sql" match="DatabaseUserName" />
+  </parameter>
+  <parameter name="DatabaseUserPassword" description="Password for the database user name." defaultValue="" tags="SQL,Password,New">
+    <parameterEntry kind="SqlCommandVariable" scope="SDesk-KGEU.sql" match="DatabaseUserPassword" />
+  </parameter>
+  <parameter name="DefaultDataPath" description="" defaultValue="" tags="SQL,Hidden">
+    <parameterEntry kind="SqlCommandVariable" scope="SDesk-KGEU.sql" match="DefaultDataPath" />
+  </parameter>
+  <parameter name="dbFullSql_Path" description="" defaultValue="{DatabaseAdministratorConnectionString}" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="dbFullSql" match="SDesk-KGEU.sql" />
+  </parameter>
+  <parameter name="Update web.config connection string" description="" defaultValue="Data Source={DatabaseServer};Database={DatabaseName};uid={DatabaseUserName};Pwd={DatabaseUserPassword};" tags="Hidden">
+    <parameterEntry kind="XmlFile" scope="web.config" match="//connectionStrings/add[@name='_IntrinsicData']/@connectionString" />
+  </parameter>
+  <parameter name="SDesk-KGEU_IisWebApplication" description="IIS Web Application content location" defaultValue="Default Web Site/SDesk_KGEU" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\lol\\Source\\Repos\\SDesk-KGEU2\\SDesk-KGEU\\bin\\Release\\app\.publish\\$" />
+  </parameter>
+  <parameter name="DeskData" description="Configure the ConnectionString" defaultValue="data source=SQL5013.myWindowsHosting.com;initial catalog=DB_9CAF2D_SdeskKgeu;persist security info=True;user id=DB_9CAF2D_SdeskKgeu_admin;password=trp11111" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="web.config" match="/configuration/connectionStrings/add[@name='DeskData']/@connectionString" />
+  </parameter>
+  <parameter name="Application Administrator User Name" description="The user name of the user that will define users and roles in the application." defaultValue="" tags="applicationSettings">
+    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.UserName' and @value='AdministratorUserName']/@value" />
+  </parameter>
+  <parameter name="Application Administrator Full Name" description="The full name of the user that will define users and roles in the application." defaultValue="" tags="applicationSettings">
+    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.FullName' and @value='AdministratorFullName']/@value" />
+  </parameter>
+  <parameter name="Application Administrator Password" description="The password of the user that will define users and roles in the application." defaultValue="" tags="Password,New,applicationSettings">
+    <parameterValidation kind="RegularExpression" validationString="^(?=.{7,})(?=(.*[\W\p{Pc}].*){1,})" />
+    <parameterEntry kind="XmlFile" scope="web.config" match="//appSettings/add[@key='Microsoft.LightSwitch.Admin.Password' and @value='AdministratorPassword']/@value" />
   </parameter>
 </parameters>

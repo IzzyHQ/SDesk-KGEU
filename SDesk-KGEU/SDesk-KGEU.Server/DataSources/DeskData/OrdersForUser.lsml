@@ -10,7 +10,7 @@
       <Partial />
     </EntityContainer.Attributes>
     <QueryOperation
-      Name="HtmlOrderFilter"
+      Name="OrdersForUser"
       ReturnType="OrderItem*">
       <QueryOperation.FilterExpression>
         <QueryFilterExpressionTree />
@@ -25,12 +25,11 @@
         Name="paramSort"
         ParameterType=":String?" />
       <QueryOperation.SortCriteria>
-        <SortCriterion>
+        <SortCriterion
+          Direction="Descending">
           <ChainExpression>
             <MemberExpression
-              Member="Status" />
-            <MemberExpression
-              Member="StatusId" />
+              Member="c_Date" />
           </ChainExpression>
         </SortCriterion>
       </QueryOperation.SortCriteria>

@@ -381,7 +381,7 @@
                   <ContentItem
                     Name="Image"
                     Kind="Value"
-                    DataType="Microsoft.LightSwitch.Extensions:Image?">
+                    DataType=":Binary">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -417,7 +417,7 @@
                   <ContentItem
                     Name="FileName"
                     Kind="Value"
-                    DataType=":String?">
+                    DataType=":String">
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>

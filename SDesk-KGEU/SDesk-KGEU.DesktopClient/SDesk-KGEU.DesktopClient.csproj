@@ -29,7 +29,7 @@
     <SilverlightAppEntry>
     </SilverlightAppEntry>
     <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
-    <EnableOutOfBrowser>True</EnableOutOfBrowser>
+    <EnableOutOfBrowser>False</EnableOutOfBrowser>
     <TestPageFileName>default.htm</TestPageFileName>
     <CreateTestPage>false</CreateTestPage>
     <ValidateXaml>true</ValidateXaml>
@@ -45,6 +45,7 @@
     <SignManifests>False</SignManifests>
     <ManifestCertificateThumbprint />
     <ManifestKeyFile />
+    <ApplicationName>SDesk_KGEU1</ApplicationName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -229,6 +230,9 @@
     </ServiceMetadataReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SDesk-KGEU.Server\DataSources\DeskData\FileItem.lsml.cs">
+      <Link>UserCode\Shared\FileItem.lsml.cs</Link>
+    </Compile>
     <Compile Include="..\SDesk-KGEU.Server\DataSources\DeskData\OrderItem.lsml.cs">
       <Link>UserCode\Shared\OrderItem.lsml.cs</Link>
     </Compile>
@@ -275,6 +279,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Plus_sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\UserPicturesData\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

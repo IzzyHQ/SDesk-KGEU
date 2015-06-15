@@ -33,4 +33,15 @@
         Replacement="$1 $2" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
+  <Permission
+    Name="CainInsertOrder">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Can insert" />
+      <Description
+        Value="Может создавать новые заявки" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="CanInsertComments" />
 </ServiceApplication>

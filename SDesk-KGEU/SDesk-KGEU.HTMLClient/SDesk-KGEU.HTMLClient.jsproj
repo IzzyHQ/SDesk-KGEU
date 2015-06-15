@@ -66,6 +66,9 @@
     <Content Include="Content\Images\user-splash-screen.png" />
     <Content Include="Content\Web.config" />
     <Content Include="packages.config" />
+    <Content Include="Screens\AddEditFileItem.lsml.js">
+      <DependentUpon>AddEditFileItem.lsml</DependentUpon>
+    </Content>
     <Content Include="Screens\AddEditOrderItem.lsml.js">
       <DependentUpon>AddEditOrderItem.lsml</DependentUpon>
     </Content>
@@ -77,6 +80,7 @@
     </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
+    <Content Include="Scripts\image-uploader.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
@@ -89,6 +93,14 @@
     <Content Include="Scripts\msls-2.5.2.min.js" />
     <Content Include="Scripts\winjs-1.0.js" />
     <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\CommentItem.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
+    <Content Include="UserCode\FileItem.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
     <Content Include="UserCode\OrderItem.lsml.js">
       <DependentUpon>
       </DependentUpon>
@@ -104,10 +116,14 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\DeskData\Order.lsml" />
+    <LightSwitchModel Include="Properties\DeskData\User.lsml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
+    <LightSwitchModel Include="Screens\AddEditCommentItem.lsml" />
+    <LightSwitchModel Include="Screens\AddEditFileItem.lsml" />
     <LightSwitchModel Include="Screens\AddEditOrderItem.lsml" />
     <LightSwitchModel Include="Screens\BrowseOrder.lsml" />
     <LightSwitchModel Include="Screens\ViewOrderItem.lsml" />
+    <LightSwitchModel Include="Screens\ViewUserItem.lsml" />
   </ItemGroup>
   <ItemGroup>
     <_ClientBuildFile Include="GeneratedArtifacts\model.json">

@@ -25,10 +25,11 @@
       </KeyProperty>
       <EntityProperty
         Name="Image"
-        PropertyType="Microsoft.LightSwitch.Extensions:Image?">
+        PropertyType=":Binary">
         <EntityProperty.Attributes>
           <MaxLength />
           <NotSearchable />
+          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
       <NavigationProperty
@@ -38,10 +39,11 @@
         ToEnd="Order" />
       <EntityProperty
         Name="FileName"
-        PropertyType=":String?">
+        PropertyType=":String">
         <EntityProperty.Attributes>
           <MaxLength
-            Value="20" />
+            Value="50" />
+          <Required />
         </EntityProperty.Attributes>
       </EntityProperty>
     </EntityType.Properties>
@@ -167,13 +169,13 @@
           Property="FileItem/Properties[FileId]" />
         <SsdlProperty
           Name="Image"
-          Nullable="True"
+          Nullable="False"
           Type="varbinary(max)"
           Property="FileItem/Properties[Image]" />
         <SsdlProperty
-          MaxLength="20"
+          MaxLength="50"
           Name="FileName"
-          Nullable="True"
+          Nullable="False"
           Type="nvarchar"
           Property="FileItem/Properties[FileName]" />
         <SsdlForeignKeyProperty

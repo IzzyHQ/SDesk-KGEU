@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="DeskData" />
+      <DisplayName
+        Value="Создать заявку" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -31,7 +33,7 @@
               Name="columns"
               Kind="Details"
               DataType="OrderItem"
-              View="Microsoft.LightSwitch.MobileWeb:ColumnsLayout">
+              View="Microsoft.LightSwitch.MobileWeb:RowsLayout">
               <ContentItem.Attributes>
                 <DisplayName
                   Value="columns" />
@@ -48,7 +50,7 @@
                 Name="left"
                 Kind="Group">
                 <ContentItem
-                  Name="CategoryItem"
+                  Name="Категория"
                   Kind="Details"
                   DataType="CategoryItem">
                   <ContentItem.DataSource>
@@ -75,6 +77,10 @@
                   Kind="Value"
                   DataType=":String"
                   View="Microsoft.LightSwitch.MobileWeb:TextArea">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Описание" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -114,6 +120,31 @@
                         <ConstantExpression
                           Value="400"
                           ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                </ContentItem.PropertySources>
+              </ContentItem>
+              <ContentItem
+                Name="AddFileItem"
+                Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Добавить файл" />
+                </ContentItem.Attributes>
+                <ContentItem.PropertySources>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <CallExpression
+                          Target="!module/Methods[showAddEditFileItem]">
+                          <CallExpression.Attributes>
+                            <CreateNewEntity
+                              EntityType="FileItem"
+                              TargetParameter="!module/Methods[showAddEditFileItem]/Parameters[FileItem]" />
+                          </CallExpression.Attributes>
+                        </CallExpression>
                       </ChainExpression>
                     </ScreenExpressionTree>
                   </ControlPropertySource>

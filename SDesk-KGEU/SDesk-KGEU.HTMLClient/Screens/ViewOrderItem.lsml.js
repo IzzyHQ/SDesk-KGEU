@@ -1,5 +1,2 @@
+/// <reference path="../GeneratedArtifacts/viewModel.js" />
 
-myapp.ViewOrderItem.Method_Tap_execute = function (screen) {
-
- 
-};

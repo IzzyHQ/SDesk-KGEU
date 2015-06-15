@@ -1,7 +1,7 @@
-﻿<OutOfBrowserSettings ShortName="SDesk_KGEU" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
-  <OutOfBrowserSettings.Blurb>SDesk_KGEU</OutOfBrowserSettings.Blurb>
+﻿<OutOfBrowserSettings ShortName="SDesk_KGEU1" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+  <OutOfBrowserSettings.Blurb>SDesk_KGEU1</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
-    <WindowSettings Title="SDesk_KGEU" Top="0" Left="0" WindowStartupLocation="Manual" />
+    <WindowSettings Title="SDesk_KGEU1" Top="0" Left="0" WindowStartupLocation="Manual" />
   </OutOfBrowserSettings.WindowSettings>
   <OutOfBrowserSettings.SecuritySettings>
     <SecuritySettings ElevatedPermissions="Required" />
