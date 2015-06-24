@@ -1,4 +1,4 @@
-﻿<OutOfBrowserSettings ShortName="SDesk_KGEU1" EnableGPUAcceleration="False" ShowInstallMenuItem="True">
+﻿<OutOfBrowserSettings ShortName="SDesk_KGEU1" EnableGPUAcceleration="False" ShowInstallMenuItem="False">
   <OutOfBrowserSettings.Blurb>SDesk_KGEU1</OutOfBrowserSettings.Blurb>
   <OutOfBrowserSettings.WindowSettings>
     <WindowSettings Title="SDesk_KGEU1" Top="0" Left="0" WindowStartupLocation="Manual" />

@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="DeskData" />
+      <DisplayName
+        Value="Рабочий стол диспетчера" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -205,6 +207,10 @@
                 <ContentItem
                   Name="TaskAdd"
                   Kind="Command">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Добавить задачу" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -456,6 +462,10 @@
                 Kind="Collection"
                 DataType="CollectionView$CommentItem"
                 View="Microsoft.LightSwitch.RichClient:List">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Комментарий" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>

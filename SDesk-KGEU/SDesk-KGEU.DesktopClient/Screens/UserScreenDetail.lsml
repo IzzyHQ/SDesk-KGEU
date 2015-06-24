@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="DeskData" />
+      <DisplayName
+        Value="Мои заявки" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -348,6 +350,10 @@
                 Kind="Collection"
                 DataType="CollectionView$FileItem"
                 View="Microsoft.LightSwitch.RichClient:List">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Прикрепленные файлы" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -864,6 +870,10 @@
               <ContentItem
                 Name="CancelComment"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Отмена" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -1016,6 +1026,10 @@
               <ContentItem
                 Name="CancelNewOrder"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Отмена" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -1028,6 +1042,10 @@
               <ContentItem
                 Name="OpenFileDialog"
                 Kind="Command">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Добавить файл" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
