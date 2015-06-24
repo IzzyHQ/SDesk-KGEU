@@ -69,15 +69,6 @@
     <Content Include="Screens\AddEditFileItem.lsml.js">
       <DependentUpon>AddEditFileItem.lsml</DependentUpon>
     </Content>
-    <Content Include="Screens\AddEditOrderItem.lsml.js">
-      <DependentUpon>AddEditOrderItem.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\BrowseOrder.lsml.js">
-      <DependentUpon>BrowseOrder.lsml</DependentUpon>
-    </Content>
-    <Content Include="Screens\ViewOrderItem.lsml.js">
-      <DependentUpon>ViewOrderItem.lsml</DependentUpon>
-    </Content>
     <Content Include="Scripts\datajs-1.1.1.js" />
     <Content Include="Scripts\datajs-1.1.1.min.js" />
     <Content Include="Scripts\image-uploader.js" />
@@ -116,7 +107,6 @@
       <ProjectCritical>true</ProjectCritical>
     </LightSwitchModel>
     <LightSwitchModel Include="Properties\DeskData\Order.lsml" />
-    <LightSwitchModel Include="Properties\DeskData\User.lsml" />
     <LightSwitchModel Include="Properties\Proxies.lsml" />
     <LightSwitchModel Include="Screens\AddEditCommentItem.lsml" />
     <LightSwitchModel Include="Screens\AddEditFileItem.lsml" />

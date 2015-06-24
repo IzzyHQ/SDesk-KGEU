@@ -34,14 +34,30 @@
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
   <Permission
-    Name="CainInsertOrder">
+    Name="CanRunDispatcherScr">
     <Permission.Attributes>
       <DisplayName
-        Value="Can insert" />
+        Value="Dispatcher " />
       <Description
-        Value="Может создавать новые заявки" />
+        Value="Разрешения для подсистемы диспетчера" />
     </Permission.Attributes>
   </Permission>
   <Permission
-    Name="CanInsertComments" />
+    Name="CanRunUserScr">
+    <Permission.Attributes>
+      <DisplayName
+        Value="User" />
+      <Description
+        Value="Разрешения для подсистемы пользователя" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="CanRunSpecialistScr">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Specialist" />
+      <Description
+        Value="Разрешения для подсистемы специалиста" />
+    </Permission.Attributes>
+  </Permission>
 </ServiceApplication>

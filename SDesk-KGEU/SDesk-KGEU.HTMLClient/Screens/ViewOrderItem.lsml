@@ -291,7 +291,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
-                        Value="50"
+                        Value="360"
                         ResultType=":Double" />
                     </ChainExpression>
                   </ScreenExpressionTree>
@@ -311,7 +311,7 @@
                   <ScreenExpressionTree>
                     <ChainExpression>
                       <ConstantExpression
-                        Value="StretchToContainer"
+                        Value="FixedSize"
                         ResultType=":String" />
                     </ChainExpression>
                   </ScreenExpressionTree>
@@ -323,7 +323,7 @@
               Kind="Command">
               <ContentItem.Attributes>
                 <DisplayName
-                  Value="Добавть файл" />
+                  Value="Добавить файл" />
               </ContentItem.Attributes>
               <ContentItem.PropertySources>
                 <ControlPropertySource
@@ -387,10 +387,11 @@
                   <ContentItem
                     Name="FileName"
                     Kind="Value"
-                    DataType=":String">
+                    DataType=":String"
+                    View="Microsoft.LightSwitch.MobileWeb:Paragraph">
                     <ContentItem.Attributes>
                       <DisplayName
-                        Value="Имя файла" />
+                        Value="Файл:" />
                     </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
@@ -400,9 +401,22 @@
                         </ChainExpression>
                       </ScreenExpressionTree>
                     </ContentItem.DataSource>
+                    <ContentItem.PropertySources>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="StretchToContainer"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
+                    </ContentItem.PropertySources>
                   </ContentItem>
                   <ContentItem
                     Name="Image"
+                    IsHidden="True"
                     Kind="Value"
                     DataType=":Binary">
                     <ContentItem.Attributes>
@@ -428,6 +442,16 @@
                           </ChainExpression>
                         </ScreenExpressionTree>
                       </ControlPropertySource>
+                      <ControlPropertySource
+                        Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
+                        <ScreenExpressionTree>
+                          <ChainExpression>
+                            <ConstantExpression
+                              Value="StretchToContainer"
+                              ResultType=":String" />
+                          </ChainExpression>
+                        </ScreenExpressionTree>
+                      </ControlPropertySource>
                     </ContentItem.PropertySources>
                   </ContentItem>
                   <ContentItem.PropertySources>
@@ -445,6 +469,26 @@
                 </ContentItem>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Height]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="50"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
+                    Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Width]">
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <ConstantExpression
+                          Value="100"
+                          ResultType=":Double" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ControlPropertySource>
+                  <ControlPropertySource
                     Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -456,24 +500,36 @@
                   </ControlPropertySource>
                 </ContentItem.PropertySources>
               </ContentItem>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Width]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="100"
+                        ResultType=":Double" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Height]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="20"
+                        ResultType=":Double" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
             </ContentItem>
             <ContentItem.PropertySources>
-              <ControlPropertySource
-                Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
-                <ScreenExpressionTree>
-                  <ChainExpression>
-                    <ConstantExpression
-                      Value="FixedSize"
-                      ResultType=":String" />
-                  </ChainExpression>
-                </ScreenExpressionTree>
-              </ControlPropertySource>
               <ControlPropertySource
                 Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Width]">
                 <ScreenExpressionTree>
                   <ChainExpression>
                     <ConstantExpression
-                      Value="400"
+                      Value="360"
                       ResultType=":Double" />
                   </ChainExpression>
                 </ScreenExpressionTree>

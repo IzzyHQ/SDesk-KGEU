@@ -13,7 +13,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Log out</title>
+    <title>Выход</title>
 </head>
 <body>
 </body>

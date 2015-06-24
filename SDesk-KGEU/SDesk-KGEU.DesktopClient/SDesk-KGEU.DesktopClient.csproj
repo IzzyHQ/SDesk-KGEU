@@ -246,6 +246,7 @@
     <Compile Include="Screens\UserScreenDetail.lsml.cs">
       <DependentUpon>UserScreenDetail.lsml</DependentUpon>
     </Compile>
+    <Compile Include="UserCode\Application.cs" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Client.lsml">

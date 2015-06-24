@@ -22,7 +22,7 @@
     <ApplicationServerType>IIS</ApplicationServerType>
     <AuthenticationType>Forms</AuthenticationType>
     <ApplicationName>SDesk_KGEU1</ApplicationName>
-    <AssemblyVersion>1.0.23.0</AssemblyVersion>
+    <AssemblyVersion>1.0.27.0</AssemblyVersion>
     <ServiceDefinitionFile>ServiceDefinition.csdef</ServiceDefinitionFile>
     <ServiceConfigurationFile>ServiceConfiguration.cscfg</ServiceConfigurationFile>
     <SqlExpressInstanceName>(LocalDB)\v11.0</SqlExpressInstanceName>

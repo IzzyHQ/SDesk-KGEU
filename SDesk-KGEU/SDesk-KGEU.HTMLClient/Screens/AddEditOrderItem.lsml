@@ -53,6 +53,10 @@
                   Name="Категория"
                   Kind="Details"
                   DataType="CategoryItem">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Категория" />
+                  </ContentItem.Attributes>
                   <ContentItem.DataSource>
                     <ScreenExpressionTree>
                       <ChainExpression>
@@ -170,6 +174,16 @@
           </ControlPropertySource>
           <ControlPropertySource
             Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[ShowAsDialog]">
+            <ScreenExpressionTree>
+              <ChainExpression>
+                <ConstantExpression
+                  Value="True"
+                  ResultType=":Boolean" />
+              </ChainExpression>
+            </ScreenExpressionTree>
+          </ControlPropertySource>
+          <ControlPropertySource
+            Property="Microsoft.LightSwitch.MobileWeb:Screen/Properties[HideTabTitles]">
             <ScreenExpressionTree>
               <ChainExpression>
                 <ConstantExpression

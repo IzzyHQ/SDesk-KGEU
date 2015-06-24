@@ -5,7 +5,7 @@
 <head>
     <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-    <title>Log In</title>
+    <title>Вход</title>
     <style type="text/css">
         /* Here you can customize your login screen */
         html {
@@ -145,23 +145,23 @@
         <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
             <LayoutTemplate>
                 <div class="accountInfo">
-                    <h1>Log In</h1>
+                    <h1>Авторизация</h1>
                     <div style="margin-bottom: 10px;">
-                        <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="Username" Text="Username:" CssClass="labelStyle" />
+                        <asp:Label ID="UsernameLabel" runat="server" AssociatedControlID="Username" Text="Имя пользователя:" CssClass="labelStyle" />
                         <asp:RequiredFieldValidator ID="UsernameRequired" runat="server" ControlToValidate="Username" ValidationGroup="LoginUserValidationGroup" Text="*" ToolTip="Username is required" CssClass="requiredStyle" />
                         <asp:TextBox ID="Username" runat="server" CssClass="textBoxStyle" />
                     </div>
                     <div style="margin-bottom: 10px;">
-                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" Text="Password:" CssClass="labelStyle" />
+                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password" Text="Пароль:" CssClass="labelStyle" />
                         <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password" ValidationGroup="LoginUserValidationGroup" Text="*" ToolTip="Password is required" CssClass="requiredStyle" />
                         <asp:TextBox ID="Password" runat="server" TextMode="Password" CssClass="textBoxStyle" />
                     </div>
                     <div class="submit-login">
                         <div class="rememberme">
-                            <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me next time." CssClass="checkStyle" />
+                            <asp:CheckBox ID="RememberMe" runat="server" Text="Запомнить пароль." CssClass="checkStyle" />
                         </div>
                         <div style="margin-bottom: 10px;" class="logInBtn">
-                            <asp:Button ID="LoginButton" runat="server" CommandName="Login" ValidationGroup="LoginUserValidationGroup" Text="LOG IN" Width="112" Height="38" CssClass="buttonStyle" />
+                            <asp:Button ID="LoginButton" runat="server" CommandName="Login" ValidationGroup="LoginUserValidationGroup" Text="Вход" Width="112" Height="38" CssClass="buttonStyle" />
                         </div>
                     </div>
                     <span class="failureNotification">

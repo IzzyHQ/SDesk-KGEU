@@ -25,15 +25,40 @@
             Name="OrderItemList"
             Kind="Group">
             <ContentItem
-              Name="Filter"
-              Kind="Command">
+              Name="ChooseList"
+              Kind="Value"
+              DataType=":String"
+              View="Microsoft.LightSwitch.MobileWeb:ValueDropdown">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Фильтр" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="BrowseOrder/Properties[ChooseList]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
               <ContentItem.PropertySources>
                 <ControlPropertySource
-                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Tap]">
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[WidthSizingMode]">
                   <ScreenExpressionTree>
                     <ChainExpression>
-                      <CallExpression
-                        Target="BrowseOrder/Methods[Filter]" />
+                      <ConstantExpression
+                        Value="FixedSize"
+                        ResultType=":String" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property="Microsoft.LightSwitch.MobileWeb:RootControl/Properties[Width]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        Value="100"
+                        ResultType=":Double" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -436,8 +461,6 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
-      <ScreenMethod
-        Name="Filter" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
@@ -454,7 +477,7 @@
             <ScreenQueryDefinition.Source>
               <QuerySourceExpressionTree>
                 <MemberExpression
-                  Member="DeskData/Members[OrdersForUser]" />
+                  Member="DeskData/Members[SortOrdersHtml]" />
               </QuerySourceExpressionTree>
             </ScreenQueryDefinition.Source>
           </ScreenQueryDefinition>
@@ -462,13 +485,37 @@
         <ScreenExpressionTree>
           <ChainExpression>
             <CallExpression
-              Target="BrowseOrder/Properties[Order]/Query" />
+              Target="BrowseOrder/Properties[Order]/Query">
+              <ArgumentExpression
+                Parameter="chooseList">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="BrowseOrder/Properties[ChooseList]" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
           </ChainExpression>
         </ScreenExpressionTree>
       </ScreenCollectionProperty>
       <ScreenProperty
-        Name="OrderItemparamSort"
-        PropertyType=":String?" />
+        Name="ChooseList"
+        PropertyType=":String">
+        <ScreenProperty.Attributes>
+          <Required />
+          <SupportedValue
+            DisplayName="Новая"
+            Value="Новая" />
+          <SupportedValue
+            DisplayName="В работе"
+            Value="В работе" />
+          <SupportedValue
+            DisplayName="Все"
+            Value="Все" />
+          <SupportedValue
+            DisplayName="Выполнена"
+            Value="Выполнена" />
+        </ScreenProperty.Attributes>
+      </ScreenProperty>
     </Screen.Properties>
   </Screen>
   <Application.Methods>

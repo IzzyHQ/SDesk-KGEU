@@ -100,4 +100,10 @@
         Target="ServiceInterface:TaskItem" />
     </EntityType.Attributes>
   </EntityType>
+  <EntityType>
+    <EntityType.Attributes>
+      <Proxy
+        Target="ServiceInterface:UserItem" />
+    </EntityType.Attributes>
+  </EntityType>
 </Application>

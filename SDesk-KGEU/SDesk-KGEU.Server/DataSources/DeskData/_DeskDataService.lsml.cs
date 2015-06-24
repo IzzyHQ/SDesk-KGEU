@@ -90,16 +90,7 @@ namespace LightSwitchApplication
 
         partial void OrdersForUser_PreprocessQuery(string paramSort, ref IQueryable<OrderItem> query)
         {
-            query = query.Where(x => x.UserOwner.Login == this.Application.User.Name);
-            if (paramSort == "New")
-            {
-                query = query.Where(x => x.Status.StatusId != 3).Where(z => z.Status.StatusId != 4);
-            }
-
-            if (paramSort == "All")
-            {
-                query = query.Where(x => x.Status.StatusId != 0);
-            }
+            
         }
 
         partial void Comment_Inserting(CommentItem entity)
@@ -112,6 +103,32 @@ namespace LightSwitchApplication
         {
             string currentUser = Application.User.Identity.Name;
             entity.UserItem = DataWorkspace.DeskData.User.Where(p => p.Login == currentUser).FirstOrDefault();
+        }
+
+        partial void SortOrdersHtml_PreprocessQuery(string chooseList, ref IQueryable<OrderItem> query)
+        {
+            query = query.Where(x => x.UserOwner.Login == this.Application.User.Name);
+            if (chooseList==null)
+            {
+                query = query.Where(x => x.Status.StatusId != 3).Where(x => x.Status.StatusId != 4);
+            }
+            if (chooseList == "Новая")
+            {
+                query = query.Where(x => x.Status.StatusId == 1);
+            }
+            if (chooseList == "В работе")
+            {
+                query = query.Where(x => x.Status.StatusId == 2);
+            }
+
+            if (chooseList == "Все")
+            {
+                query = query.Where(x => x.Status.StatusId != 0);
+            }
+            if (chooseList == "Выполнена")
+            {
+                query = query.Where(x => x.Status.StatusId == 3);
+            }
         }
 
 

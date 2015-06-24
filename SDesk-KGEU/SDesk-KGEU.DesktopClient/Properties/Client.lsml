@@ -3,7 +3,6 @@
   Name="LightSwitchApplication.SDesk_KGEU.DesktopClient"
   TargetPlatform="RichClient"
   Version="1.0.0.0"
-  DefaultNavigationItem="!module/NavigationItems[Tasks]"
   Shell="Microsoft.LightSwitch.RichClient:Standard"
   Theme="Microsoft.LightSwitch.RichClient:Blue" xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
   <Application.Attributes>
@@ -38,13 +37,19 @@
   <Permission>
     <Permission.Attributes>
       <Proxy
-        Target="ServiceInterface:CainInsertOrder" />
+        Target="ServiceInterface:CanRunDispatcherScr" />
     </Permission.Attributes>
   </Permission>
   <Permission>
     <Permission.Attributes>
       <Proxy
-        Target="ServiceInterface:CanInsertComments" />
+        Target="ServiceInterface:CanRunUserScr" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:CanRunSpecialistScr" />
     </Permission.Attributes>
   </Permission>
   <Application.Commands>
@@ -64,7 +69,7 @@
   <Application.NavigationItems>
     <ApplicationNavigationGroup
       Name="Tasks"
-      DefaultItem="!module/NavigationItems[Tasks]/Children[UserScreenDetail]">
+      DefaultItem="!module/NavigationItems[Tasks]/Children[UserListDetail]">
       <ApplicationNavigationGroup.Attributes>
         <DisplayName
           Value="Tasks" />

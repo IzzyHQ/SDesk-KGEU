@@ -39,13 +39,19 @@
   <Permission>
     <Permission.Attributes>
       <Proxy
-        Target="ServiceInterface:CainInsertOrder" />
+        Target="ServiceInterface:CanRunDispatcherScr" />
     </Permission.Attributes>
   </Permission>
   <Permission>
     <Permission.Attributes>
       <Proxy
-        Target="ServiceInterface:CanInsertComments" />
+        Target="ServiceInterface:CanRunUserScr" />
+    </Permission.Attributes>
+  </Permission>
+  <Permission>
+    <Permission.Attributes>
+      <Proxy
+        Target="ServiceInterface:CanRunSpecialistScr" />
     </Permission.Attributes>
   </Permission>
 </Application>
