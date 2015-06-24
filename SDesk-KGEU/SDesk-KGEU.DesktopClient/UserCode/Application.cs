@@ -19,12 +19,12 @@ namespace LightSwitchApplication
 
         partial void DispatcherScreenDetail_CanRun(ref bool result)
         {
-            result = User.HasPermission(Permissions.CanRunDispatcherScr);
+            
         }
 
         partial void SpecialistScreenDetail_CanRun(ref bool result)
         {
-            result = User.HasPermission(Permissions.CanRunSpecialistScr);
+            
 
         }
 
