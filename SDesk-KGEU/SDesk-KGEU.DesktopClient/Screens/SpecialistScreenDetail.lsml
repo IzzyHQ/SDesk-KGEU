@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="DeskData" />
+      <DisplayName
+        Value="Рабочий стол специалиста" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem

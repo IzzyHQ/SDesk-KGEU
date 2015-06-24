@@ -9,6 +9,8 @@
     <Screen.Attributes>
       <SaveChangesTo
         EntityContainer="DeskData" />
+      <DisplayName
+        Value="Мои данные" />
     </Screen.Attributes>
     <Screen.RootContentItem>
       <ContentItem
@@ -44,6 +46,10 @@
                 Name="FName1"
                 Kind="Value"
                 DataType=":String">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Фамилия" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -57,6 +63,10 @@
                 Name="LName1"
                 Kind="Value"
                 DataType=":String">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Имя" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -70,6 +80,10 @@
                 Name="PName1"
                 Kind="Value"
                 DataType=":String">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Отчество" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -83,6 +97,10 @@
                 Name="Login1"
                 Kind="Value"
                 DataType=":String">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Логин" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -109,6 +127,10 @@
                 Name="Phone1"
                 Kind="Value"
                 DataType=":String">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Телефон" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
@@ -122,6 +144,10 @@
                 Name="Image1"
                 Kind="Value"
                 DataType="Microsoft.LightSwitch.Extensions:Image?">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Фото" />
+                </ContentItem.Attributes>
                 <ContentItem.DataSource>
                   <ScreenExpressionTree>
                     <ChainExpression>
