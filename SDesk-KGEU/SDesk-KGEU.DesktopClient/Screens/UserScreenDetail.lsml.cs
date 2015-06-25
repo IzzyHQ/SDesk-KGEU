@@ -20,7 +20,7 @@ namespace LightSwitchApplication
         {
             Order.AddNew();
             this.OpenModalWindow("AddNewOrderModalWnd");
-            Order.SelectedItem.UserOwner = DataWorkspace.DeskData.User.Where(p => p.Login == "IlnurV").First();
+            Order.SelectedItem.UserOwner = DataWorkspace.DeskData.User.Where(p => p.Login == Application.User.Name).First();
             Order.SelectedItem.Status = DataWorkspace.DeskData.Status.Where(p => p.StatusId == 1).First();  
         }
 

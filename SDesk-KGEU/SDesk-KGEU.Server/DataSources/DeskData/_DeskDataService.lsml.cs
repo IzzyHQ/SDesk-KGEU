@@ -13,7 +13,7 @@ namespace LightSwitchApplication
         
         partial void OrderFilter_PreprocessQuery(string ShowAll, ref IQueryable<OrderItem> query)
         {
-            query = query.Where(p => p.UserOwner.Login == "IlnurV");
+            query = query.Where(p => p.UserOwner.Login == Application.User.Name);
 
 
             if (ShowAll == null)
@@ -41,7 +41,7 @@ namespace LightSwitchApplication
 
         partial void TaskFilter_PreprocessQuery(string Filter, ref IQueryable<TaskItem> query)
         {
-            query = query.Where(p => p.UserItem.Login == "IlnurV");
+            query = query.Where(p => p.UserItem.Login == Application.User.Name);
 
 
             if (Filter == null)
