@@ -488,6 +488,10 @@
                     Name="CommentId"
                     Kind="Value"
                     DataType=":Int32">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Номер комментария" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -501,6 +505,10 @@
                     Name="Description2"
                     Kind="Value"
                     DataType=":String">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Описание" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -514,6 +522,10 @@
                     Name="c_Date2"
                     Kind="Value"
                     DataType=":DateTime">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Дата" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -527,6 +539,10 @@
                     Name="UserItem3"
                     Kind="Details"
                     DataType="UserItem">
+                    <ContentItem.Attributes>
+                      <DisplayName
+                        Value="Автор заявки" />
+                    </ContentItem.Attributes>
                     <ContentItem.DataSource>
                       <ScreenExpressionTree>
                         <ChainExpression>
@@ -944,6 +960,10 @@
               Kind="Value"
               DataType=":String"
               View="Microsoft.LightSwitch.RichClient:TextBox">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Описание" />
+              </ContentItem.Attributes>
               <ContentItem.DataSource>
                 <ScreenExpressionTree>
                   <ChainExpression>
